@@ -7,6 +7,9 @@ import "./sass/global.scss";
 import { ThemeProvider, createTheme } from "@mui/material";
 import MyBooking from "./views/MyBooking";
 import {createContext, useState} from "react"
+import Login from "./views/Login";
+import Register from "./views/Register";
+
 
 
 const theme = createTheme({
@@ -37,6 +40,8 @@ function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<Home/>} />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
           <Route path="mybooking" element={<MyBooking />} />
           <Route path="destination" element={<Page404 />} />
           <Route path="crew" element={<Page404 />} />
