@@ -38,7 +38,7 @@ function App() {
         <Route element={<Layout />}>
           <Route index element={<Home/>} />
           <Route path="mybooking" element={<MyBooking />} />
-          <Route path="destination" element={<Page404 />} />
+          <Route path="destination" element={<ContentG1/>} />
           <Route path="crew" element={<Page404 />} />
           <Route path="technology" element={<Page404 />} />
           <Route path="*" element={<Page404 />} />
