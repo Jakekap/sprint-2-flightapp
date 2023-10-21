@@ -11,7 +11,7 @@ import { useContext } from 'react'
 import { Context } from '../App'; 
 
 const ContainerMyBooking = styled.div`
-  
+  margin-top: 60px;
   padding-top: 5%;
   padding-left: 8%;
   @media screen and (max-width: 570px) 
@@ -34,15 +34,18 @@ const MyBooking = () => {
             
               <h1>My booking</h1>
               <HorizontalLinearAlternativeLabelStepper />
-              {value ==1 && <DatosPassagerDetails/> }
-              {value ==0 && <DatosPurchase />}
+              {value ==0 && <DatosPassagerDetails/> }
+              {value ==1 && <DatosPurchase />}
               {value ==2 && <Eticket />}
             </ContainerMyBooking>
           </Box>
         </Grid>
         <Grid item xs={12} sm={4} md={4} lg={4} >
           <Box >
+            <ContainerMyBooking>
             <ContainerRight/>
+            </ContainerMyBooking>
+      
           </Box>
         </Grid>
       </Grid>
