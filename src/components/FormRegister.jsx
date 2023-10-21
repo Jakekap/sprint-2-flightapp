@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 let schema = object({
     nombre: string("Por favor ingrese todo en texto").required("Este campo es obligatorio"),
     tipodoc: string("Por favor ingrese todo en texto").required("Este campo es obligatorio"), 
-    email: string("Por favor ingrese todo en texto").required("Este campo es obligatorio"),
+    email: string().email("Por favor ingrese un email valido").required("Este campo es obligatorio"),
     contrasenia: string("Por favor ingrese todo en texto").required("Este campo es obligatorio"),
     genero: string("Por favor ingrese todo en texto").required("Este campo es obligatorio")
   });
@@ -55,6 +55,8 @@ const Form = styled.form`
     height: 90%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 10px;
     @media screen and (max-width: 500px) {
         margin-top: 0;
@@ -97,33 +99,33 @@ const FormRegister = () => {
         <H2>Datos Personales</H2>
         <P>Ingresa tus datos tal como aparecen en tu documento de identidad. Los usaremos cuando compres tus pasajes.</P>
         <Form onSubmit={formik.handleSubmit} >
-            <FormControl isInvalid={formik.errors.nombre}>
+            <FormControl width={'80%'} isInvalid={formik.errors.nombre}>
                 <FormLabel>Nombre</FormLabel>
-                <Input type='text' name='nombre' onChange={formik.handleChange} value={formik.values.nombre} placeholder={'Ingresa tu nombre'} />
+                <Input width={'80%'} border={'1px'} borderRadius={'15px'} type='text' name='nombre' onChange={formik.handleChange} value={formik.values.nombre} placeholder={'Ingresa tu nombre'} />
                 <FormErrorMessage>{formik.errors.nombre}</FormErrorMessage>
             </FormControl>
-            <FormControl isInvalid={formik.errors.tipodoc}>
+            <FormControl width={'80%'} isInvalid={formik.errors.tipodoc}>
                 <FormLabel>Tipo Documento</FormLabel>
-                  <Select name='tipodoc' onChange={formik.handleChange} value={formik.values.tipodoc}   placeholder='Select option'>
+                  <Select width={'100%'} border={'1px'} borderRadius={'15px'} name='tipodoc' onChange={formik.handleChange} value={formik.values.tipodoc}   placeholder='Select option'>
                     <option value='CC'>CC</option>
                     <option value='TI'>TI</option>
                     <option value='PP'>PP</option>
                   </Select>
                 <FormErrorMessage>{formik.errors.tipodoc}</FormErrorMessage>
             </FormControl>
-            <FormControl isInvalid={formik.errors.email}>
+            <FormControl width={'80%'} isInvalid={formik.errors.email}>
                 <FormLabel>Email</FormLabel>
-                <Input type='text' name='email' onChange={formik.handleChange} value={formik.values.email} placeholder={'Email'} />
+                <Input width={'80%'} border={'1px'} borderRadius={'15px'} type='text' name='email' onChange={formik.handleChange} value={formik.values.email} placeholder={'Email'} />
                 <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
             </FormControl>
-            <FormControl isInvalid={formik.errors.contrasenia}>
+            <FormControl width={'80%'} isInvalid={formik.errors.contrasenia}>
                 <FormLabel>Contraseña</FormLabel>
-                <Input type='password' name='contrasenia' onChange={formik.handleChange} value={formik.values.contrasenia} placeholder={'Ingresa tu contraseña'} />
+                <Input width={'80%'} border={'1px'} borderRadius={'15px'} type='password' name='contrasenia' onChange={formik.handleChange} value={formik.values.contrasenia} placeholder={'Ingresa tu contraseña'} />
                 <FormErrorMessage>{formik.errors.contrasenia}</FormErrorMessage>
             </FormControl>
-            <FormControl isInvalid={formik.errors.genero}>
+            <FormControl width={'80%'} isInvalid={formik.errors.genero}>
                 <FormLabel>Genero</FormLabel>
-                <Select name='genero' onChange={formik.handleChange} value={formik.values.genero} placeholder='Select option'>
+                <Select border={'1px'} borderRadius={'15px'} name='genero' onChange={formik.handleChange} value={formik.values.genero} placeholder='Select option'>
                   <option value='f' >F</option>
                   <option value='m'>M</option>
                   <option value='otro'>Otro</option>
@@ -131,7 +133,7 @@ const FormRegister = () => {
                 <FormErrorMessage>{formik.errors.genero}</FormErrorMessage>
             </FormControl>
             <DivButtons>
-                <Button width={['100%','100%']} type="submit">Crear Cuenta</Button>
+                <Button width={['100%','100%']}  type="submit">Crear Cuenta</Button>
             </DivButtons>
         </Form>
       </Section>
