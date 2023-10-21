@@ -41,14 +41,23 @@ const H1 = styled.h1`
     color: #171A1F;
     font-family: Sarabun;
     font-size: 45px;
+    @media screen and (max-width: 500px) {
+        font-size: 30px;
+    }
 `
 const H2 = styled.h2`
 color: #171A1F;
 font-family: Sarabun;
 font-size: 30px;
+@media screen and (max-width: 500px) {
+    font-size: 20px;
+}
 `
 const P = styled.p`
     color: #808080;
+    @media screen and (max-width: 500px) {
+        font-size: 12px;
+    }
 `
 const Form = styled.form`
     width: 100%;
@@ -63,6 +72,7 @@ const Form = styled.form`
     }
 `
 const DivButtons = styled.div`
+    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,6 +80,12 @@ const DivButtons = styled.div`
 `
 const LinkInicioSesion = styled(Link)`
     color: #6C6CFE;
+`
+const ButtonCrearCuenta = styled(Button)`
+  background: #11D295;
+  border-radius: 15px;
+  color: #FFFFFF;
+  width: 80%;
 `
 const FormRegister = () => {
     const [input, setInput] = useState('')
@@ -133,7 +149,7 @@ const FormRegister = () => {
                 <FormErrorMessage>{formik.errors.genero}</FormErrorMessage>
             </FormControl>
             <DivButtons>
-                <Button width={['100%','100%']}  type="submit">Crear Cuenta</Button>
+                <ButtonCrearCuenta colorScheme='green' width={['100%','100%']}  type="submit">Crear Cuenta</ButtonCrearCuenta>
             </DivButtons>
         </Form>
       </Section>
