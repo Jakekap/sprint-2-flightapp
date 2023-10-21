@@ -1,0 +1,62 @@
+@import "global";
+
+$icon-size: 25px;
+
+.locationCard {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fefefe;
+  border: 1px solid #fef6ef;
+  &:hover {
+    box-shadow: 0px 2px 5px 0px rgba(23, 26, 31, 0.09),
+      0px 0px 2px 0px rgba(23, 26, 31, 0.12);
+  }
+  &-img {
+    width: 50%;
+    object-fit: cover;
+    object-position: center;
+  }
+  &-text {
+    display: flex;
+    width: 100%;
+    padding: 0 20px;
+    justify-content: center;
+    flex-direction: column;
+    gap: 25px;
+    &-title {
+      color: #171a1f;
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0;
+    }
+    &-date {
+      color: #323842;
+      font-size: 14px;
+      font-weight: 400;
+      margin: 0;
+    }
+    &-time {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      &-icon {
+        height: $icon-size;
+        width: $icon-size;
+      }
+      &-text {
+        color: #8f949f;
+        font-size: 14px;
+        font-weight: 400;
+        margin: 0;
+      }
+    }
+    &-price {
+      color: #6c6cfe;
+      font-size: 18px;
+      font-weight: 600;
+      text-align: end;
+      margin: 0;
+    }
+  }
+}

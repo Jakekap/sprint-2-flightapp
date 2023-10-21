@@ -1,0 +1,63 @@
+@import "global";
+
+$icon-size: 25px;
+
+.newsCard {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fefefe;
+  border: 1px solid #fef6ef;
+  &:hover {
+    box-shadow: 0px 2px 5px 0px rgba(23, 26, 31, 0.09),
+      0px 0px 2px 0px rgba(23, 26, 31, 0.12);
+  }
+  &-img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  &-text {
+    display: flex;
+    width: 100%;
+    padding: 15px 20px;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    &-subtitle {
+      color: #11d295;
+      font-size: 16px;
+      font-weight: 400;
+      margin: 0;
+    }
+    &-title {
+      color: #171a1f;
+      font-size: 24px;
+      font-weight: 700;
+      max-width: 330px;
+      margin: 0;
+    }
+    &-time {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      &-date {
+        color: #8f949f;
+        font-size: 14px;
+        font-weight: 400;
+        margin: 0;
+      }
+      &-read {
+        color: #323842;
+        border-radius: 14px;
+        background: #f2f3f5;
+        padding: 4px 8px;
+        font-size: 12px;
+        font-weight: 400;
+        margin: 0;
+      }
+    }
+  }
+}

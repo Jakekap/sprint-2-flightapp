@@ -1,0 +1,326 @@
+@import "global";
+
+$icon-size: 25px;
+$margin-top: 60px;
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.calendar {
+  display: flex;
+  gap: 30px;
+  &-buttons {
+    display: flex;
+    flex-direction: column;
+    min-width: 180px;
+  }
+  &-panel {
+    box-shadow: 0px 2px 5px 0px rgba(23, 26, 31, 0.09),
+      0px 0px 2px 0px rgba(23, 26, 31, 0.12);
+    border-radius: 8px;
+
+    & .MuiTypography-root {
+      font-size: 14px;
+      font-weight: 400;
+    }
+    & .MuiButtonBase-root {
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+}
+
+.searchPanel {
+  display: flex;
+  margin-top: $margin-top;
+  flex-direction: column;
+  gap: 30px;
+  width: 50%;
+  margin-left: $horizontal-padding;
+}
+.title {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.map {
+  grid-area: 1 / 1 / 2 / 3;
+  border-radius: 8px;
+  overflow: hidden;
+  &-img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.container {
+  margin-top: $navbar-height;
+  &-main {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    height: 100vh;
+  }
+  &-trips {
+    height: 100vh;
+    background-color: #f7f8f9;
+    padding: 50px $horizontal-padding;
+    &-cards {
+      height: 90vh;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 2.8fr 1fr;
+      gap: 40px;
+    }
+    &-top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      &-button {
+        color: #fefefe;
+        border-radius: 30px;
+        padding: 10px 20px;
+        background-color: #171a1f;
+        border: 1px solid #171a1f;
+        &:hover {
+          color: #171a1f;
+          background-color: #fefefe;
+          border: 1px solid #171a1f;
+        }
+      }
+      &-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        &-icon {
+          width: $icon-size;
+          height: $icon-size;
+        }
+        &-text {
+          margin: 0;
+        }
+      }
+    }
+  }
+  &-new {
+    height: 80vh;
+    padding: 50px $horizontal-padding;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &-content {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 50px;
+    }
+    &-title {
+      color: #171a1f;
+      text-align: center;
+      font-size: 48px;
+      font-weight: 700;
+      margin: 0;
+    }
+    &-cards {
+      display: flex;
+      gap: 20px;
+      width: 100%;
+    }
+    &-button {
+      border-radius: 22px;
+      background: #11d295;
+      padding: 10px 20px;
+      color: #fefefe;
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+}
+.plane-img {
+  position: absolute;
+  width: 600px;
+  right: 0;
+  bottom: 0;
+}
+.divider {
+  background-color: #bbc0c9;
+  width: 1px;
+  height: 28px;
+  margin: 0 12px;
+}
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  & .MuiFormControl-root {
+    padding-left: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: #efeffe;
+    border-radius: 100px;
+    height: 40px;
+    & .MuiOutlinedInput-notchedOutline {
+      border: none;
+    }
+    & .MuiSvgIcon-root {
+      fill: #6c6cff;
+    }
+    & .MuiSelect-select {
+      color: #6c6cff;
+    }
+  }
+  &-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: #f2f3f5;
+    padding: 10px 15px;
+    border-radius: 100px;
+    &-arrows {
+      width: $icon-size;
+      height: $icon-size;
+    }
+    &-arrow {
+      width: $icon-size;
+      height: $icon-size;
+    }
+    &-person {
+      width: $icon-size;
+      height: $icon-size;
+    }
+    &-ticket {
+      width: $icon-size;
+      height: $icon-size;
+    }
+  }
+}
+.search {
+  display: flex;
+  height: 100px;
+  gap: 10px;
+  &-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 30px;
+    border-radius: 6px;
+    background-color: #6c6cfe;
+    width: 100%;
+    &-input {
+      //Placeholder color
+      & .MuiFormLabel-root {
+        color: $white;
+      }
+      //Animated placeholder
+      & label.Mui-focused {
+        color: $white;
+      }
+      //Underline on click
+      & .MuiInput-underline:after {
+        border-bottom-color: $white;
+      }
+      & .MuiInputBase-root {
+        //Underline static
+        &:before {
+          border-bottom: 2px solid #cdcdfe;
+        }
+        //Underline on hover
+        &:hover:not(.Mui-disabled, .Mui-error):before {
+          border-bottom-color: $white;
+        }
+      }
+      //Text color
+      & .MuiInputBase-input {
+        color: $white;
+      }
+    }
+    &-switch {
+      &-icon {
+        width: $icon-size;
+        height: $icon-size;
+      }
+    }
+  }
+  &-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #11d295;
+    border-radius: 6px;
+    width: 60px;
+    &-icon {
+      width: $icon-size;
+      height: $icon-size;
+    }
+  }
+}
+.weatherPanel {
+  &-header {
+    margin: 0 $horizontal-padding;
+    margin-top: $margin-top;
+    overflow: hidden;
+    border: 2px solid #f2f3f5;
+    border-radius: 117px;
+    text-align: center;
+    &-day {
+      color: #8f949f;
+      font-size: 16px;
+      font-weight: 400;
+    }
+    &-divider {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f2f3f5;
+      height: 1px;
+      width: 100%;
+      &-rectangle {
+        background-color: #dde0e5;
+        border-radius: 10px;
+        height: 10px;
+        width: 30px;
+      }
+    }
+    &-img {
+      width: 64px;
+      height: 64px;
+      margin: 20px 80px;
+    }
+    &-city {
+      margin: 0;
+      margin-top: 20px;
+      color: #6c6cfe;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    &-state {
+      color: #6c6cfe;
+      font-size: 14px;
+      font-weight: 400;
+      margin: 0;
+    }
+    &-degree {
+      color: #171a1f;
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0px;
+    }
+    &-weather {
+      margin: 0;
+      margin-bottom: 20px;
+      color: #8f949f;
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+}

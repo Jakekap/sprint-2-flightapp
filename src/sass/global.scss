@@ -1,23 +1,21 @@
 //@use "main";
-//@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap");
-$font-alata: "Alata", sans-serif;
-$font-josefin: "Josefin Sans", sans-serif;
-$font-barlow-cond: "Barlow Condensed", sans-serif;
-$font-barlow: "Barlow", sans-serif;
-$font-bellefair: "Bellefair", serif;
-$font-size: 15px;
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Sarabun:wght@400;500;600;700&display=swap");
+$font-sarabun: "Sarabun", sans-serif;
+$font-size: 16px;
+$bg-color: #fefefe;
 $white: #fff;
 $black: #000;
 $text-alt: #d0d6f9;
 $dark-gray: hsl(0, 0%, 55%);
 $very-dark-gray: hsl(0, 0%, 41%);
-$horizontal-padding: 10vw;
+$horizontal-padding: 7vw;
+$navbar-height: 60px;
 
 body {
   margin: 0;
   padding: 0;
   font-size: $font-size;
-  font-family: $font-alata;
+  font-family: $font-sarabun;
 }
 
 ul {

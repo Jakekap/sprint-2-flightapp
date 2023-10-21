@@ -1,0 +1,62 @@
+@import "global";
+
+$icons-size: 20px;
+.main-container {
+  box-shadow: 0px 2px 5px 0px rgba(23, 26, 31, 0.09),
+    0px 0px 2px 0px rgba(23, 26, 31, 0.12);
+  display: flex;
+  position: fixed;
+  width: calc(100vw - 16px);
+  box-sizing: border-box;
+  top: 0;
+  background-color: #fefefe;
+  z-index: 100;
+  justify-content: space-between;
+  padding: 0 $horizontal-padding;
+}
+img {
+  width: 100%;
+}
+figure {
+  margin: 0;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  &-brand {
+    height: 35px;
+    width: 35px;
+  }
+  &-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #6c6cfe;
+  }
+}
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  &-currency {
+    font-weight: 700;
+  }
+  &-network_icon {
+    margin: 0;
+    width: $icons-size;
+    height: $icons-size;
+  }
+  &-bell_icon {
+    width: $icons-size;
+    height: $icons-size;
+  }
+  &-user_icon {
+    background-color: #cdcdfe;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    &_img {
+      border-radius: 50%;
+    }
+  }
+}

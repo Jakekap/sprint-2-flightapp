@@ -1,0 +1,12 @@
+@import "global";
+
+.flightList-container {
+  margin-top: calc($navbar-height + 50px);
+  padding: 0 $horizontal-padding;
+}
+.banner {
+  &-img {
+    height: 450px;
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,22 @@
+.calendar {
+  &-buttons {
+    &_button {
+      margin-bottom: 20px;
+      display: flex;
+      font-size: 16px;
+      font-weight: 400;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 20px;
+      color: #fe902b;
+      border-radius: 100px;
+    }
+  }
+  &-panel {
+  }
+}
+.clicked {
+  background-color: #fe902b;
+  color: #fff;
+}

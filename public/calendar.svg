@@ -1,0 +1,6 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path id="calendar" d="M4.5 7.5L15.5 7.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="calendar" d="M17.5 4.5L2.5 4.5L2.5 16.5L17.5 16.5L17.5 4.5Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="calendar" d="M6.5 2.5L6.5 4.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="calendar" d="M13.5 2.5L13.5 4.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
