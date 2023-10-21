@@ -6,6 +6,7 @@ import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 
 export default function Filter({ type }) {
+  console.log(type);
   return (
     <section className="filterContainer">
       <div>
