@@ -6,8 +6,7 @@ import FlightList from "./views/FlightList";
 import "./sass/global.scss";
 import { ThemeProvider, createTheme } from "@mui/material";
 import MyBooking from "./views/MyBooking";
-import {createContext, useState} from "react"
-
+import { createContext, useState } from "react";
 
 const theme = createTheme({
   palette: {
@@ -32,21 +31,19 @@ function App() {
   const [value, setValue] = useState(0);
   return (
     <ThemeProvider theme={theme}>
-      
-    <Context.Provider value={{value, setValue}}>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route index element={<Home/>} />
-          <Route path="mybooking" element={<MyBooking />} />
-          <Route path="destination" element={<Page404 />} />
-          <Route path="crew" element={<Page404 />} />
-          <Route path="technology" element={<Page404 />} />
-          <Route path="*" element={<Page404 />} />
-        </Route>
-      </Routes>
-    </Context.Provider>
+      <Context.Provider value={{ value, setValue }}>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="mybooking" element={<MyBooking />} />
+            <Route path="flight-list" element={<FlightList />} />
+            <Route path="crew" element={<Page404 />} />
+            <Route path="technology" element={<Page404 />} />
+            <Route path="*" element={<Page404 />} />
+          </Route>
+        </Routes>
+      </Context.Provider>
     </ThemeProvider>
-      
   );
 }
 
