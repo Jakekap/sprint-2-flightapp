@@ -28,6 +28,7 @@ const DatosPassagerDetails = () => {
   const nextStepSlider = () => {
     setValue(value + 1);
   };
+
   return (
     <Formik
       initialValues={{
@@ -104,6 +105,7 @@ const DatosPassagerDetails = () => {
         return errores;
       }}
       onSubmit={(values, { resetForm }) => {
+        localStorage.setItem("passager", JSON.stringify(values));
         resetForm();
         nextStepSlider();
         console.log(values);
@@ -180,9 +182,9 @@ const DatosPassagerDetails = () => {
                   value={values.title}
                   onChange={handleChange}
                 >
-                  <option value="title1">Title1</option>
-                  <option value="title2">Title1</option>
-                  <option value="title3">Title1</option>
+                  <option value="mr">Mr</option>
+                  <option value="mrs">Mrs</option>
+                  <option value="miss">Miss</option>
                 </StyledField>
               </DivFieldSelect>
 
@@ -211,9 +213,14 @@ const DatosPassagerDetails = () => {
                   onChange={handleChange}
                 >
                   {/*<option value="" disabled selected>Selecciona una opción</option>*/}
+                  <option value="mexico">Mexico</option>
+                  <option value="guatemala">Guatemala</option>
+                  <option value="indonesia">Indonesia</option>
                   <option value="colombia">Colombia</option>
                   <option value="peru">Peru</option>
                   <option value="ecuador">Ecuador</option>
+                  <option value="estados unidos">Estados Unidos</option>
+                  <option value="españa">España</option>
                 </StyledField>
               </DivFieldSelect>
             </DivFormulario>
@@ -272,6 +279,11 @@ const DatosPassagerDetails = () => {
                   <option value="mexico">Mexico</option>
                   <option value="guatemala">Guatemala</option>
                   <option value="indonesia">Indonesia</option>
+                  <option value="colombia">Colombia</option>
+                  <option value="peru">Peru</option>
+                  <option value="ecuador">Ecuador</option>
+                  <option value="estados unidos">Estados Unidos</option>
+                  <option value="españa">España</option>
                 </StyledField>
               </DivField>
 
@@ -355,9 +367,9 @@ const DatosPassagerDetails = () => {
                   value={values.titleContact}
                   onChange={handleChange}
                 >
-                  <option value="titleContact1">TitleContact1</option>
-                  <option value="titleContact2">TitleContact1</option>
-                  <option value="titleContact3">TitleContact1</option>
+                  <option value="mrContact1">Mr</option>
+                  <option value="mrsContact2">Mrs</option>
+                  <option value="missContact3">Miss</option>
                 </StyledField>
               </DivFieldSelect>
               <DivFieldSelect>

@@ -161,7 +161,7 @@ const SvgTicket = styled.svg`
 `
 
 function Ticket() {
- 
+
   return (
     <DivTicket>
       <SvgTicket xmlns="http://www.w3.org/2000/svg" width="782" height="342" viewBox="0 0 782 342" fill="black">
