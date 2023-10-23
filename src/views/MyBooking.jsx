@@ -26,7 +26,7 @@ const MyBooking = () => {
   const {value} = useContext(Context);
   return (
     <>
-      <Grid container sx={{bgcolor:'white'}}>
+      <Grid container >
         <Grid item xs={12} sm={8} md={8} lg={8}>
           <Box >
             <ContainerMyBooking>

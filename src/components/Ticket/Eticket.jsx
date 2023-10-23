@@ -1,6 +1,10 @@
 import React from 'react'
 import Ticket from './Ticket'
 import styled from 'styled-components'
+import { useEffect } from 'react'
+import { postMyBooking } from '../ServiceMyBooking/MyBookingService'
+import { useState } from 'react'
+
 
 const DivContainer = styled.div`
 
@@ -54,6 +58,7 @@ const DivTicket = styled.div`
 
 `
 
+
 //Boton booking
 const BottomBooking = styled.button`
     @import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap');
@@ -75,7 +80,23 @@ const BottomBooking = styled.button`
     align-items:center;
 `;
 
+
 const Eticket = () => {
+    const [datos, setDatos] = useState({});
+
+    useEffect(()=>{
+        const datosPasajeros = JSON.parse(localStorage.getItem('passager'));
+        setDatos(datosPasajeros);
+        
+    },[]);
+
+    const envioData = async ()=> {
+        const postData = await postMyBooking(datos);
+        console.log('respuesta', postData);
+        localStorage.clear();
+        
+    }
+
     return (
         <DivContainer>
             <div>
@@ -95,7 +116,7 @@ const Eticket = () => {
                 <Ticket />
             </DivTicket>
             <div>
-                <BottomBooking><p>Send to my e-mail</p></BottomBooking>
+                <BottomBooking onClick={()=>envioData()}><p>Send to my e-mail</p></BottomBooking>
             </div>
         </DivContainer>
     )

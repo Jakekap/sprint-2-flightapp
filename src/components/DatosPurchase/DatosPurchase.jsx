@@ -6,6 +6,7 @@ import { BottomBooking, DivField, DivFieldComplete, DivFormulario, DivTargets, E
 import { useContext } from 'react'
 import { Context } from '../../App'; 
 
+
 const DatosPurchase = () => {
   const {value, setValue} = useContext(Context);
 
@@ -13,6 +14,7 @@ const DatosPurchase = () => {
     setValue (value + 1);
      
   }
+
 
   return (
     <Formik
@@ -74,6 +76,9 @@ const DatosPurchase = () => {
         return errores;
       }}
       onSubmit={(values, {resetForm})=>{
+        const dataPassager = JSON.parse(localStorage.getItem('passager'));
+        const data = Object.assign({}, dataPassager, values);
+        localStorage.setItem('passager',JSON.stringify(data));
         nextStepSlider();
         resetForm();
         console.log(values);
@@ -134,7 +139,7 @@ const DatosPurchase = () => {
 
                     <DivFieldComplete>
                       <Labels htmlFor="address">Address</Labels>
-                      <StyledField type="number" id="address" name="address" value={values.address} onChange={handleChange} placeholder="Enter your address" />
+                      <StyledField type="text" id="address" name="address" value={values.address} onChange={handleChange} placeholder="Enter your address" />
                       <ErrorMessage name="address" component={()=>(<Errors> {errors.address}</Errors>)} />
                     </DivFieldComplete>
 

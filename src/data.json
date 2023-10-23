@@ -83,22 +83,26 @@
   ],
   "passagers": [
     {
-      "id": 1,
-      "name": "John Doe",
-      "surname": "Doe",
-      "title": "Mr",
-      "birthday": "1990-01-01",
-      "nationality": "Colombian",
-      "passport": "123456789",
-      "country_issue": "Colombia",
-      "expiration_date": "2025-01-01",
-      "contact": {
-        "name": "John Doe",
-        "surname": "Doe",
-        "title": "Mr",
-        "email": "example@gmail.com",
-        "phone": "123456789"
-      }
+      "name": "Manuel",
+      "surname": "Pino",
+      "title": "mr",
+      "birthday": "2023-10-11",
+      "nationality": "ecuador",
+      "pNumber": 5554,
+      "country": "peru",
+      "expiryDate": "2023-10-19",
+      "nameContact": "Santiago",
+      "surnameContact": "Muñoz",
+      "titleContact": "mrsContact2",
+      "emailContact": "mfgranoble@gmail.com",
+      "numberContact": 312548,
+      "nameOncard": "Bancolombia",
+      "cardNumber": 755,
+      "expirationDate": "2023-10-12",
+      "cvv": 455445,
+      "address":"Barrio santa Maria",
+      "zipPostal": 545,
+      "id": 1
     }
   ]
 }
