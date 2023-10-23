@@ -20,7 +20,9 @@
       },
       "cabin_class": "Economy",
       "locations": {
-        "origin_airport": "Bogotá",
+        "origin_city": "Bogotá",
+        "destination_city": "New York",
+        "origin_airport": "El Dorado",
         "origin_letter": "BOG",
         "destination_airport": "New York",
         "destination_letter": "NYC"
@@ -55,6 +57,8 @@
       },
       "cabin_class": "Business",
       "locations": {
+        "origin_city": "Medellín",
+        "destination_city": "Miami",
         "origin_airport": "Medellín",
         "origin_letter": "MDE",
         "destination_airport": "Miami",
@@ -90,6 +94,8 @@
       },
       "cabin_class": "Economy",
       "locations": {
+        "origin_city": "Los Angeles",
+        "destination_city": "New York",
         "origin_airport": "Los Angeles",
         "origin_letter": "LAX",
         "destination_airport": "New York",
@@ -125,6 +131,8 @@
       },
       "cabin_class": "First Class",
       "locations": {
+        "origin_city": "Frankfurt",
+        "destination_city": "Tokyo",
         "origin_airport": "Frankfurt",
         "origin_letter": "FRA",
         "destination_airport": "Tokyo",
@@ -160,6 +168,8 @@
       },
       "cabin_class": "Economy",
       "locations": {
+        "origin_city": "Dubai",
+        "destination_city": "New York",
         "origin_airport": "Dubai",
         "origin_letter": "DXB",
         "destination_airport": "New York",
@@ -195,6 +205,8 @@
       },
       "cabin_class": "Economy",
       "locations": {
+        "destination_city": "Sydney",
+        "origin_city": "Los Angeles",
         "origin_airport": "Sydney",
         "origin_letter": "SYD",
         "destination_airport": "Los Angeles",
@@ -230,6 +242,8 @@
       },
       "cabin_class": "Business Class",
       "locations": {
+        "origin_city": "Singapore",
+        "destination_city": "London",
         "origin_airport": "Singapore",
         "origin_letter": "SIN",
         "destination_airport": "London",
@@ -265,6 +279,8 @@
       },
       "cabin_class": "Economy",
       "locations": {
+        "origin_city": "Dublin",
+        "destination_city": "London",
         "origin_airport": "Dublin",
         "origin_letter": "DUB",
         "destination_airport": "London",
@@ -300,6 +316,8 @@
       },
       "cabin_class": "Business Class",
       "locations": {
+        "destination_city": "New Delhi",
+        "origin_city": "Istanbul",
         "origin_airport": "Istanbul",
         "origin_letter": "IST",
         "destination_airport": "New Delhi",
@@ -335,6 +353,8 @@
       },
       "cabin_class": "Economy",
       "locations": {
+        "destination_city": "Sydney",
+        "origin_city": "Tokyo",
         "origin_airport": "Tokyo",
         "origin_letter": "HND",
         "destination_airport": "Sydney",
@@ -371,6 +391,8 @@
       },
       "cabin_class": "Economy",
       "locations": {
+        "destination_city": "New York",
+        "origin_city": "Paris",
         "origin_airport": "New York",
         "origin_letter": "JFK",
         "destination_airport": "Paris",
@@ -406,6 +428,8 @@
       },
       "cabin_class": "First Class",
       "locations": {
+        "destination_city": "Hong Kong",
+        "origin_city": "London",
         "origin_airport": "London",
         "origin_letter": "LHR",
         "destination_airport": "Hong Kong",
@@ -442,6 +466,8 @@
       },
       "cabin_class": "Business Class",
       "locations": {
+        "destination_city": "Tokyo",
+        "origin_city": "Paris",
         "origin_airport": "Paris",
         "origin_letter": "CDG",
         "destination_airport": "Tokyo",
@@ -477,6 +503,8 @@
       },
       "cabin_class": "Economy",
       "locations": {
+        "destination_city": "Los Angeles",
+        "origin_city": "Chicago",
         "origin_airport": "Chicago",
         "origin_letter": "ORD",
         "destination_airport": "Los Angeles",
@@ -513,6 +541,8 @@
       },
       "cabin_class": "First Class",
       "locations": {
+        "destination_city": "Sydney",
+        "origin_city": "Singapore",
         "origin_airport": "Singapore",
         "origin_letter": "SIN",
         "destination_airport": "Sydney",
@@ -548,6 +578,8 @@
       },
       "cabin_class": "Economy",
       "locations": {
+        "origin_city": "New York",
+        "destination_city": "Miami",
         "origin_airport": "New York",
         "origin_letter": "JFK",
         "destination_airport": "Miami",
@@ -583,6 +615,8 @@
       },
       "cabin_class": "First Class",
       "locations": {
+        "origin_city": "Hong Kong",
+        "destination_city": "London",
         "origin_airport": "London",
         "origin_letter": "LHR",
         "destination_airport": "Los Angeles",
@@ -602,27 +636,13 @@
   "users": [
     {
       "id": 1,
-      "email": "traveler123@gmail.com",
       "username": "traveler123",
-      "password": "password123",
-      "tipodoc": "CC",
-      "genero": "M"
+      "password": "password123"
     },
     {
       "id": 2,
-      "email": "adventurer456@gmail.com",
       "username": "adventurer456",
-      "password": "secret789",
-      "tipodoc": "CC",
-      "genero": "M"
-    },
-    {
-      "nombre": "Flor Amalia Mera",
-      "tipodoc": "CC",
-      "email": "whitney@gmail.com",
-      "password": "12345",
-      "genero": "f",
-      "id": 6
+      "password": "secret789"
     }
   ],
   "passagers": [
@@ -644,7 +664,7 @@
       "cardNumber": 755,
       "expirationDate": "2023-10-12",
       "cvv": 455445,
-      "address":"Barrio santa Maria",
+      "address": "Barrio santa Maria",
       "zipPostal": 545,
       "id": 1
     }
