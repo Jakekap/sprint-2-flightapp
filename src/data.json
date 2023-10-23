@@ -5,6 +5,7 @@
       "flight_code": "CA-6018",
       "airbus": "A320",
       "airline": "Avianca",
+      "airline_icon": "horizonJet",
       "weight": {
         "baggage": "23 kg",
         "cabin": "10 kg"
@@ -39,6 +40,7 @@
       "flight_code": "CA-6291",
       "airbus": "A320",
       "airline": "Viva Colombia",
+      "airline_icon": "altitude",
       "weight": {
         "baggage": "23 kg",
         "cabin": "10 kg"
@@ -66,6 +68,534 @@
       "flight_duration": {
         "hours": 7,
         "minutes": 30
+      }
+    },
+    {
+      "id": 3,
+      "flight_code": "AA-1234",
+      "airbus": "A350",
+      "airline": "American Airlines",
+      "airline_icon": "cloudy",
+      "weight": {
+        "baggage": "20 kg",
+        "cabin": "8 kg"
+      },
+      "seat_layout": "3-4-3",
+      "inches": "32",
+      "trip_type": "round_trip",
+      "passenger_count": {
+        "adults": 2,
+        "children": 1,
+        "infants": 0
+      },
+      "cabin_class": "Economy",
+      "locations": {
+        "origin_airport": "Los Angeles",
+        "origin_letter": "LAX",
+        "destination_airport": "New York",
+        "destination_letter": "JFK"
+      },
+      "flight_date": "2023-11-25",
+      "price": 600,
+      "layovers": 0,
+      "departure_time": "2023-11-25T10:30:00",
+      "arrival_time": "2023-11-25T15:45:00",
+      "flight_duration": {
+        "hours": 5,
+        "minutes": 15
+      }
+    },
+    {
+      "id": 4,
+      "flight_code": "LH-4567",
+      "airbus": "A380",
+      "airline": "Lufthansa",
+      "airline_icon": "flyScape",
+      "weight": {
+        "baggage": "25 kg",
+        "cabin": "12 kg"
+      },
+      "seat_layout": "3-4-3",
+      "inches": "34",
+      "trip_type": "one_way",
+      "passenger_count": {
+        "adults": 2,
+        "children": 2,
+        "infants": 1
+      },
+      "cabin_class": "First Class",
+      "locations": {
+        "origin_airport": "Frankfurt",
+        "origin_letter": "FRA",
+        "destination_airport": "Tokyo",
+        "destination_letter": "NRT"
+      },
+      "flight_date": "2023-12-05",
+      "price": 2000,
+      "layovers": 2,
+      "departure_time": "2023-12-05T15:00:00",
+      "arrival_time": "2023-12-06T08:30:00",
+      "flight_duration": {
+        "hours": 13,
+        "minutes": 30
+      }
+    },
+    {
+      "id": 5,
+      "flight_code": "EK-7890",
+      "airbus": "A380",
+      "airline": "Emirates",
+      "airline_icon": "cloudy",
+      "weight": {
+        "baggage": "30 kg",
+        "cabin": "15 kg"
+      },
+      "seat_layout": "3-4-3",
+      "inches": "36",
+      "trip_type": "round_trip",
+      "passenger_count": {
+        "adults": 1,
+        "children": 0,
+        "infants": 0
+      },
+      "cabin_class": "Economy",
+      "locations": {
+        "origin_airport": "Dubai",
+        "origin_letter": "DXB",
+        "destination_airport": "New York",
+        "destination_letter": "JFK"
+      },
+      "flight_date": "2023-12-15",
+      "price": 1200,
+      "layovers": 1,
+      "departure_time": "2023-12-15T18:45:00",
+      "arrival_time": "2023-12-16T09:15:00",
+      "flight_duration": {
+        "hours": 14,
+        "minutes": 30
+      }
+    },
+    {
+      "id": 6,
+      "flight_code": "QF-5678",
+      "airbus": "A330",
+      "airline": "Qantas",
+      "airline_icon": "horizonJet",
+      "weight": {
+        "baggage": "22 kg",
+        "cabin": "10 kg"
+      },
+      "seat_layout": "3-3-3",
+      "inches": "31",
+      "trip_type": "one_way",
+      "passenger_count": {
+        "adults": 1,
+        "children": 0,
+        "infants": 0
+      },
+      "cabin_class": "Economy",
+      "locations": {
+        "origin_airport": "Sydney",
+        "origin_letter": "SYD",
+        "destination_airport": "Los Angeles",
+        "destination_letter": "LAX"
+      },
+      "flight_date": "2023-11-30",
+      "price": 800,
+      "layovers": 0,
+      "departure_time": "2023-11-30T14:15:00",
+      "arrival_time": "2023-11-30T19:30:00",
+      "flight_duration": {
+        "hours": 14,
+        "minutes": 30
+      }
+    },
+    {
+      "id": 7,
+      "flight_code": "SQ-3456",
+      "airbus": "A350",
+      "airline": "Singapore Airlines",
+      "airline_icon": "altitude",
+      "weight": {
+        "baggage": "28 kg",
+        "cabin": "12 kg"
+      },
+      "seat_layout": "3-3-3",
+      "inches": "32",
+      "trip_type": "round_trip",
+      "passenger_count": {
+        "adults": 2,
+        "children": 1,
+        "infants": 1
+      },
+      "cabin_class": "Business Class",
+      "locations": {
+        "origin_airport": "Singapore",
+        "origin_letter": "SIN",
+        "destination_airport": "London",
+        "destination_letter": "LHR"
+      },
+      "flight_date": "2023-12-20",
+      "price": 1500,
+      "layovers": 1,
+      "departure_time": "2023-12-20T10:00:00",
+      "arrival_time": "2023-12-21T06:30:00",
+      "flight_duration": {
+        "hours": 13,
+        "minutes": 30
+      }
+    },
+    {
+      "id": 8,
+      "flight_code": "FR-1235",
+      "airbus": "A320",
+      "airline": "Ryanair",
+      "airline_icon": "cloudy",
+      "weight": {
+        "baggage": "20 kg",
+        "cabin": "7 kg"
+      },
+      "seat_layout": "3-3-3",
+      "inches": "30",
+      "trip_type": "one_way",
+      "passenger_count": {
+        "adults": 1,
+        "children": 0,
+        "infants": 0
+      },
+      "cabin_class": "Economy",
+      "locations": {
+        "origin_airport": "Dublin",
+        "origin_letter": "DUB",
+        "destination_airport": "London",
+        "destination_letter": "LHR"
+      },
+      "flight_date": "2023-12-20",
+      "price": 1500,
+      "layovers": 1,
+      "departure_time": "2023-12-20T10:00:00",
+      "arrival_time": "2023-12-21T06:30:00",
+      "flight_duration": {
+        "hours": 13,
+        "minutes": 30
+      }
+    },
+    {
+      "id": 9,
+      "flight_code": "TK-7891",
+      "airbus": "A330",
+      "airline": "Turkish Airlines",
+      "airline_icon": "flyScape",
+      "weight": {
+        "baggage": "25 kg",
+        "cabin": "10 kg"
+      },
+      "seat_layout": "3-3-3",
+      "inches": "32",
+      "trip_type": "round_trip",
+      "passenger_count": {
+        "adults": 2,
+        "children": 0,
+        "infants": 1
+      },
+      "cabin_class": "Business Class",
+      "locations": {
+        "origin_airport": "Istanbul",
+        "origin_letter": "IST",
+        "destination_airport": "New Delhi",
+        "destination_letter": "DEL"
+      },
+      "flight_date": "2023-12-08",
+      "price": 1100,
+      "layovers": 1,
+      "departure_time": "2023-12-08T16:45:00",
+      "arrival_time": "2023-12-09T04:15:00",
+      "flight_duration": {
+        "hours": 8,
+        "minutes": 30
+      }
+    },
+    {
+      "id": 10,
+      "flight_code": "JL-6543",
+      "airbus": "A350",
+      "airline": "Japan Airlines",
+      "airline_icon": "horizonJet",
+      "weight": {
+        "baggage": "23 kg",
+        "cabin": "9 kg"
+      },
+      "seat_layout": "3-4-3",
+      "inches": "33",
+      "trip_type": "one_way",
+      "passenger_count": {
+        "adults": 1,
+        "children": 0,
+        "infants": 0
+      },
+      "cabin_class": "Economy",
+      "locations": {
+        "origin_airport": "Tokyo",
+        "origin_letter": "HND",
+        "destination_airport": "Sydney",
+        "destination_letter": "SYD"
+      },
+      "flight_date": "2023-11-18",
+      "price": 900,
+      "layovers": 0,
+      "departure_time": "2023-11-18T12:30:00",
+      "arrival_time": "2023-11-18T20:00:00",
+      "flight_duration": {
+        "hours": 8,
+        "minutes": 30
+      }
+    },
+    {
+      "id": 11,
+      "flight_code": "DL-4321",
+      "airbus": "A320",
+      "airline": "Delta Air Lines",
+      "airline_icon": "altitude",
+
+      "weight": {
+        "baggage": "24 kg",
+        "cabin": "10 kg"
+      },
+      "seat_layout": "3-3-3",
+      "inches": "31",
+      "trip_type": "round_trip",
+      "passenger_count": {
+        "adults": 2,
+        "children": 2,
+        "infants": 0
+      },
+      "cabin_class": "Economy",
+      "locations": {
+        "origin_airport": "New York",
+        "origin_letter": "JFK",
+        "destination_airport": "Paris",
+        "destination_letter": "CDG"
+      },
+      "flight_date": "2023-12-03",
+      "price": 1000,
+      "layovers": 1,
+      "departure_time": "2023-12-03T14:45:00",
+      "arrival_time": "2023-12-04T08:15:00",
+      "flight_duration": {
+        "hours": 7,
+        "minutes": 30
+      }
+    },
+    {
+      "id": 12,
+      "flight_code": "BA-5678",
+      "airbus": "A380",
+      "airline": "British Airways",
+      "airline_icon": "cloudy",
+      "weight": {
+        "baggage": "26 kg",
+        "cabin": "11 kg"
+      },
+      "seat_layout": "3-4-3",
+      "inches": "35",
+      "trip_type": "one_way",
+      "passenger_count": {
+        "adults": 1,
+        "children": 0,
+        "infants": 0
+      },
+      "cabin_class": "First Class",
+      "locations": {
+        "origin_airport": "London",
+        "origin_letter": "LHR",
+        "destination_airport": "Hong Kong",
+        "destination_letter": "HKG"
+      },
+      "flight_date": "2023-11-27",
+      "price": 1800,
+      "layovers": 1,
+      "departure_time": "2023-11-27T09:30:00",
+      "arrival_time": "2023-11-28T04:45:00",
+      "flight_duration": {
+        "hours": 11,
+        "minutes": 15
+      }
+    },
+    {
+      "id": 13,
+      "flight_code": "AF-8765",
+      "airbus": "A350",
+      "airline": "Air France",
+      "airline_icon": "flyScape",
+
+      "weight": {
+        "baggage": "27 kg",
+        "cabin": "12 kg"
+      },
+      "seat_layout": "3-3-3",
+      "inches": "32",
+      "trip_type": "round_trip",
+      "passenger_count": {
+        "adults": 1,
+        "children": 1,
+        "infants": 0
+      },
+      "cabin_class": "Business Class",
+      "locations": {
+        "origin_airport": "Paris",
+        "origin_letter": "CDG",
+        "destination_airport": "Tokyo",
+        "destination_letter": "NRT"
+      },
+      "flight_date": "2023-12-12",
+      "price": 1400,
+      "layovers": 1,
+      "departure_time": "2023-12-12T17:00:00",
+      "arrival_time": "2023-12-13T11:30:00",
+      "flight_duration": {
+        "hours": 11,
+        "minutes": 30
+      }
+    },
+    {
+      "id": 14,
+      "flight_code": "UA-6543",
+      "airbus": "A320",
+      "airline": "United Airlines",
+      "airline_icon": "horizonJet",
+      "weight": {
+        "baggage": "22 kg",
+        "cabin": "9 kg"
+      },
+      "seat_layout": "3-3-3",
+      "inches": "31",
+      "trip_type": "one_way",
+      "passenger_count": {
+        "adults": 1,
+        "children": 0,
+        "infants": 0
+      },
+      "cabin_class": "Economy",
+      "locations": {
+        "origin_airport": "Chicago",
+        "origin_letter": "ORD",
+        "destination_airport": "Los Angeles",
+        "destination_letter": "LAX"
+      },
+      "flight_date": "2023-12-12",
+      "price": 1400,
+      "layovers": 1,
+      "departure_time": "2023-12-12T17:00:00",
+      "arrival_time": "2023-12-13T11:30:00",
+      "flight_duration": {
+        "hours": 11,
+        "minutes": 30
+      }
+    },
+    {
+      "id": 15,
+      "flight_code": "SQ-7890",
+      "airbus": "A350",
+      "airline": "Singapore Airlines",
+      "airline_icon": "altitude",
+
+      "weight": {
+        "baggage": "29 kg",
+        "cabin": "13 kg"
+      },
+      "seat_layout": "3-3-3",
+      "inches": "34",
+      "trip_type": "round_trip",
+      "passenger_count": {
+        "adults": 2,
+        "children": 0,
+        "infants": 1
+      },
+      "cabin_class": "First Class",
+      "locations": {
+        "origin_airport": "Singapore",
+        "origin_letter": "SIN",
+        "destination_airport": "Sydney",
+        "destination_letter": "SYD"
+      },
+      "flight_date": "2023-12-22",
+      "price": 2000,
+      "layovers": 1,
+      "departure_time": "2023-12-22T14:00:00",
+      "arrival_time": "2023-12-23T05:30:00",
+      "flight_duration": {
+        "hours": 12,
+        "minutes": 30
+      }
+    },
+    {
+      "id": 16,
+      "flight_code": "DL-4321",
+      "airbus": "A320",
+      "airline": "Delta Air Lines",
+      "airline_icon": "cloudy",
+      "weight": {
+        "baggage": "24 kg",
+        "cabin": "10 kg"
+      },
+      "seat_layout": "3-3-3",
+      "inches": "31",
+      "trip_type": "one_way",
+      "passenger_count": {
+        "adults": 1,
+        "children": 0,
+        "infants": 0
+      },
+      "cabin_class": "Economy",
+      "locations": {
+        "origin_airport": "New York",
+        "origin_letter": "JFK",
+        "destination_airport": "Miami",
+        "destination_letter": "MIA"
+      },
+      "flight_date": "2023-11-29",
+      "price": 700,
+      "layovers": 0,
+      "departure_time": "2023-11-29T12:45:00",
+      "arrival_time": "2023-11-29T17:00:00",
+      "flight_duration": {
+        "hours": 4,
+        "minutes": 15
+      }
+    },
+    {
+      "id": 17,
+      "flight_code": "BA-5678",
+      "airbus": "A380",
+      "airline": "British Airways",
+      "airline_icon": "cloudy",
+      "weight": {
+        "baggage": "26 kg",
+        "cabin": "11 kg"
+      },
+      "seat_layout": "3-4-3",
+      "inches": "35",
+      "trip_type": "round_trip",
+      "passenger_count": {
+        "adults": 1,
+        "children": 0,
+        "infants": 0
+      },
+      "cabin_class": "First Class",
+      "locations": {
+        "origin_airport": "London",
+        "origin_letter": "LHR",
+        "destination_airport": "Los Angeles",
+        "destination_letter": "LAX"
+      },
+      "flight_date": "2023-12-10",
+      "price": 1800,
+      "layovers": 1,
+      "departure_time": "2023-12-10T09:30:00",
+      "arrival_time": "2023-12-11T04:45:00",
+      "flight_duration": {
+        "hours": 11,
+        "minutes": 15
       }
     }
   ],

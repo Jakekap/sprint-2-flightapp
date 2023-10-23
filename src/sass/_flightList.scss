@@ -1,8 +1,146 @@
 @import "global";
 
-.flightList-container {
-  margin-top: calc($navbar-height + 50px);
-  padding: 0 $horizontal-padding;
+.custom-textfield {
+  & .MuiInputBase-root {
+    border-radius: 50px;
+  }
+  & .MuiInputBase-input {
+    padding: 8px 20px;
+    padding-left: 0;
+  }
+}
+.custom-datepicker {
+  & .MuiInputBase-root {
+    border-radius: 50px;
+    overflow: hidden;
+  }
+  & .MuiInputBase-input {
+    padding: 8px 20px;
+  }
+}
+
+.flightList {
+  &-container {
+    margin-top: calc($navbar-height + 50px);
+    padding: 0 $horizontal-padding;
+  }
+  &-main {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      &-buttons {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        & .MuiFormControl-root {
+          padding-left: 15px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          border: none;
+          background-color: #f2f3f5;
+          border-radius: 100px;
+          height: 40px;
+          & .MuiOutlinedInput-notchedOutline {
+            border: none;
+          }
+          & .MuiSvgIcon-root {
+            fill: #323842;
+          }
+          & .MuiSelect-select {
+            color: #323842;
+            font-size: 14px;
+            font-weight: 400;
+          }
+        }
+        &-button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          background-color: #f2f3f5;
+          padding: 10px 15px;
+          border-radius: 100px;
+          &-person {
+            width: $icon-size;
+            height: $icon-size;
+          }
+          &-ticket {
+            width: $icon-size;
+            height: $icon-size;
+          }
+        }
+      }
+      &-fields {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+        &-arrows {
+          width: $icon-size;
+          height: $icon-size;
+        }
+        &-search {
+          display: grid;
+          place-content: center;
+          background-color: #11d295;
+          border-radius: 50%;
+          padding: 10px;
+          box-sizing: border-box;
+        }
+      }
+      &-panel {
+        display: flex;
+        margin-top: 20px;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 10px 10px 0 0;
+        background-color: #0ea676;
+        &-items {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          margin: 0 40px;
+        }
+        &-date {
+          cursor: pointer;
+          margin-top: 20px;
+          padding: 5px 30px;
+          background-color: #fefefe;
+          border-radius: 10px 10px 0 0;
+          & p {
+            color: #0ea676;
+            margin: 5px;
+          }
+        }
+        &-icon {
+          display: grid;
+          place-content: center;
+          padding: 0 40px;
+          height: 100%;
+          border-left: 2px solid #fefefe;
+        }
+      }
+      &-items {
+        margin-top: 25px;
+        & .MuiDivider-root {
+          margin: 25px 0;
+        }
+      }
+    }
+    &-filters {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
 }
 .banner {
   &-img {

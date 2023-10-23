@@ -1,0 +1,55 @@
+@import "global";
+
+.filterContainer {
+  width: 300px;
+  box-shadow: 0px 0px 1px 0px rgba(23, 26, 31, 0.07),
+    0px 0px 2px 0px rgba(23, 26, 31, 0.12);
+  border-radius: 8px;
+  &-top {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    &-title {
+      display: flex;
+      gap: 10px;
+      &-icon {
+        width: $icon-size;
+        height: $icon-size;
+      }
+      &-text {
+        color: #323842;
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0;
+      }
+    }
+    &-reset {
+      color: #171a1f;
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0;
+    }
+  }
+
+  .radioContainer {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    & .radioLabel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 20px;
+      &-text {
+        color: #171a1f;
+        font-size: 16px;
+        font-weight: 700;
+      }
+      &-icon {
+        width: $icon-size;
+        height: $icon-size;
+      }
+    }
+  }
+}
