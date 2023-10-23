@@ -10,20 +10,28 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.8.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.14.12",
+    "@mui/icons-material": "^5.14.14",
+    "@mui/material": "^5.14.14",
     "@mui/x-date-pickers": "^6.16.3",
     "axios": "^1.5.1",
     "dayjs": "^1.11.10",
     "formik": "^2.4.5",
+<<<<<<< HEAD
+=======
+    "framer-motion": "^10.16.4",
+>>>>>>> login/santiago
     "json-server": "^0.17.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-horizontal-slider": "^1.1.1",
     "react-router-dom": "^6.16.0",
-    "styled-components": "^6.0.8",
-    "styled-media-query": "^2.1.2"
+    "styled-components": "^6.1.0",
+    "styled-media-query": "^2.1.2",
+    "sweetalert2": "^11.7.32",
+    "yup": "^1.3.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
