@@ -7,34 +7,29 @@ import { getdata, getusers } from "./ServicesSidebar/Sidebarservices";
 const SidebarG1 = () => {
   const [isBenefits, setIsBenefits] = useState(false);
   const [flightData, setFlightData] = useState([]);
-  const [selectedFlight, setSelectedFlight] = useState(null);
-  const [dataUser, setDataUser] = useState([])
+  const [dataUser, setDataUser] = useState([]);
 
-useEffect (() =>{
-    getdata().then((response)=>{
+  useEffect(() => {
+    getdata().then((response) => {
       setFlightData(response);
       console.log(response);
+    });
+  }, []);
 
-    })
-  },[])
-
- useEffect (() =>{
-    getusers().then((response)=>{
+  useEffect(() => {
+    getusers().then((response) => {
       setDataUser(response);
-      console.log(response);
-
-    })
-  },[])
+    });
+  }, []);
 
   /* const handleFlightSelect = (flight) => {
     setSelectedFlight(flight);
   };
  */
   return (
-    <div className="container">
-      {" "}
-      <h1 className="container__title">Cloudy Airlines</h1>{" "}
-        <img src="./Container 4.png" />
+    <div className="containerNavbar">
+      <h1 className="containerNavbar">Cloudy Airlines</h1>
+      <img src="/companyIcons/cloudy.svg" />
       <div className="container__OptionsBar">
         <div
           className="container__OptionsBar-items"
@@ -90,7 +85,8 @@ useEffect (() =>{
                 <div className="FligtTiming">
                   <p className="flightTimeText">{flight.departure_time}</p>
                   <p className="flightTimeText2">
-                    {flight.flight_duration.hours}'{flight.flight_duration.minutes}''
+                    {flight.flight_duration.hours}
+                    {flight.flight_duration.minutes}
                   </p>
                   <p className="flightTimeText">{flight.arrival_time}</p>
                 </div>
@@ -101,8 +97,12 @@ useEffect (() =>{
                     Cabin class: {flight.cabin_class}
                   </p>
                   <img src="./Case.png" />
-                  <p className="flightBaggageText">Baggage: {flight.weight.baggage}</p>
-                  <p className="flightCBText">Cabin Baggage: {flight.weight.cabin}</p>
+                  <p className="flightBaggageText">
+                    Baggage: {flight.weight.baggage}
+                  </p>
+                  <p className="flightCBText">
+                    Cabin Baggage: {flight.weight.cabin}
+                  </p>
                   <img src="./Case.png" />
                   <p className="flightAirbusText">Airbus: {flight.airbus}</p>
                   <p className="flightSeatText">
@@ -114,13 +114,13 @@ useEffect (() =>{
                 </div>
                 {/*  Destination */}
                 <div className="DestinationInfo">
-                    <h1 className="destinationLetter">
-                      {flight.destination_letter}
-                    </h1>
-                    <p className="destinationAirport">
-                      {flight.destination_airport}
-                    </p>
-                  </div>
+                  <h1 className="destinationLetter">
+                    {flight.destination_letter}
+                  </h1>
+                  <p className="destinationAirport">
+                    {flight.destination_airport}
+                  </p>
+                </div>
               </div>
               <div className="Payment">
                 <p className="Price">{flight.price}</p>

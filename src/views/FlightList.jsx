@@ -23,7 +23,7 @@ export default function FlightList() {
   useEffect(() => {
     const fetchTravels = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/travels");
+        const response = await axios.get("http://localhost:3000/travels");
         setFlightData(response.data);
         setLoading(false);
       } catch (error) {
@@ -174,6 +174,9 @@ export default function FlightList() {
             })}
           </div>
         </section>
+      </section>
+      <section className="flightList-sidebarBackground">
+        <section className="flightList-sidebarBackground-sidebar"></section>
       </section>
     </section>
   );
