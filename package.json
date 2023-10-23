@@ -19,10 +19,7 @@
     "axios": "^1.5.1",
     "dayjs": "^1.11.10",
     "formik": "^2.4.5",
-<<<<<<< HEAD
-=======
     "framer-motion": "^10.16.4",
->>>>>>> login/santiago
     "json-server": "^0.17.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
