@@ -1,7 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import useForm from '../hooks/useForm'
+import { AppContext } from '../App';
+import Swal from 'sweetalert2';
 import { useFormik } from "formik";
+import { getUserByEmailAndPassword } from '../services/useService';
 import { Button, FormControl, FormErrorMessage, FormLabel, Input, border } from '@chakra-ui/react';
-import { object, string} from 'yup';
+import { object, string } from 'yup';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
@@ -109,7 +113,7 @@ const DivFooter = styled.div`
       align-items: center;
       
     }
-`  
+`
 const LinkRecuperar = styled(Link)`
     color: #6C6CFE;
     &:hover{
@@ -132,22 +136,45 @@ const Imagen = styled.img`
 `
 
 const FormLogin = () => {
+  const { dataForm, handleChangeInputs } = useForm();
+  const { userLogged: { userLoggedDispatch } } = useContext(AppContext);
   const [input, setInput] = useState('')
-
   const handleInputChange = (e) => setInput(e.target.value)
-
   const isError = input === ''
+
   const formik = useFormik({
     initialValues: {
       email: '',
       contrasenia: ''
     },
     validationSchema: schema,
-    onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
+    onSubmit: async values => {
+      const user = await getUserByEmailAndPassword(formik.values.email, formik.values.contrasenia);
+      console.log(user);
+      if (user) {
+        Swal.fire(
+          'Excelente!',
+          'Has iniciado sesión exitosamente!',
+          'success'
+        )
+        const action = {
+          type: 'LOGIN',
+          payload: {
+            isAuthenticated: true,
+            user: user
+          }
+        }
+        userLoggedDispatch(action);    
+
+      } else {
+        Swal.fire(
+          'Oops!',
+          'Por favor verifique sus credenciales!',
+          'error'
+        )
+      }
     },
   });
-
   return (
     <Body>
       <Section>
@@ -160,7 +187,7 @@ const FormLogin = () => {
 
           <FormControl width={'80%'} isInvalid={formik.errors.email}>
             <FormLabel>Email</FormLabel>
-            <Input width={'100%'} border={'1px'} borderRadius={'15px'} type='text'  name='email' onChange={formik.handleChange} value={formik.values.email} placeholder={' Email'} />
+            <Input width={'100%'} border={'1px'} borderRadius={'15px'} type='text' name='email' onChange={formik.handleChange} value={formik.values.email} placeholder={' Email'} />
             <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
           </FormControl>
 
@@ -171,7 +198,7 @@ const FormLogin = () => {
           </FormControl>
 
           <DivButtons>
-            <ButtonContinuar  type="submit" >Continuar</ButtonContinuar>
+            <ButtonContinuar type="submit" >Continuar</ButtonContinuar>
             <LinkRegister to={'/register'}><ButtonCrear type="submit" width={'100%'}>Crear Cuentarear</ButtonCrear></LinkRegister>
           </DivButtons>
         </Form>

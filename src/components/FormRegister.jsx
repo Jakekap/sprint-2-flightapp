@@ -1,17 +1,19 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { useFormik } from "formik";
 import { Button, FormControl, FormErrorMessage, FormLabel, Input, Select } from '@chakra-ui/react';
-import { object, string} from 'yup';
+import { object, string } from 'yup';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { postRegisterUser } from '../services/useService'
+import Swal from 'sweetalert2';
 
 let schema = object({
-    nombre: string("Por favor ingrese todo en texto").required("Este campo es obligatorio"),
-    tipodoc: string("Por favor ingrese todo en texto").required("Este campo es obligatorio"), 
-    email: string().email("Por favor ingrese un email valido").required("Este campo es obligatorio"),
-    contrasenia: string("Por favor ingrese todo en texto").required("Este campo es obligatorio"),
-    genero: string("Por favor ingrese todo en texto").required("Este campo es obligatorio")
-  });
+  nombre: string("Por favor ingrese todo en texto").required("Este campo es obligatorio"),
+  tipodoc: string("Por favor ingrese todo en texto").required("Este campo es obligatorio"),
+  email: string().email("Por favor ingrese un email valido").required("Este campo es obligatorio"),
+  contrasenia: string("Por favor ingrese todo en texto").required("Este campo es obligatorio"),
+  genero: string("Por favor ingrese todo en texto").required("Este campo es obligatorio")
+});
 
 const Body = styled.div`
     width: 100%;
@@ -88,24 +90,37 @@ const ButtonCrearCuenta = styled(Button)`
   width: 80%;
 `
 const FormRegister = () => {
-    const [input, setInput] = useState('')
+  const [input, setInput] = useState('')
 
-    const handleInputChange = (e) => setInput(e.target.value)
-  
-    const isError = input === ''
-    const formik = useFormik({
-      initialValues: {
-        nombre: '',
-        tipodoc: '',
-        email: '',
-        contrasenia: '',
-        genero: ''
-      },
-      validationSchema: schema,
-      onSubmit: values => {
-        alert(JSON.stringify(values, null, 2));
-      },
-    });
+  const handleInputChange = (e) => setInput(e.target.value)
+
+  const isError = input === ''
+  const formik = useFormik({
+    initialValues: {
+      nombre: '',
+      tipodoc: '',
+      email: '',
+      contrasenia: '',
+      genero: ''
+    },
+    validationSchema: schema,
+    onSubmit: async values => {
+      const data = await postRegisterUser(formik.values.nombre, formik.values.tipodoc, formik.values.email, formik.values.contrasenia, formik.values.genero)
+      if (data) {
+        Swal.fire(
+          'Excelente!',
+          'Te has registrado  exitosamente!',
+          'success'
+        )
+      } else {
+        Swal.fire(
+          'error',
+          'Oops...',
+          'Algo salio mal!',
+        )
+      }
+    },
+  });
 
   return (
     <Body>
@@ -115,42 +130,42 @@ const FormRegister = () => {
         <H2>Datos Personales</H2>
         <P>Ingresa tus datos tal como aparecen en tu documento de identidad. Los usaremos cuando compres tus pasajes.</P>
         <Form onSubmit={formik.handleSubmit} >
-            <FormControl width={'80%'} isInvalid={formik.errors.nombre}>
-                <FormLabel>Nombre</FormLabel>
-                <Input width={'80%'} border={'1px'} borderRadius={'15px'} type='text' name='nombre' onChange={formik.handleChange} value={formik.values.nombre} placeholder={'Ingresa tu nombre'} />
-                <FormErrorMessage>{formik.errors.nombre}</FormErrorMessage>
-            </FormControl>
-            <FormControl width={'80%'} isInvalid={formik.errors.tipodoc}>
-                <FormLabel>Tipo Documento</FormLabel>
-                  <Select width={'100%'} border={'1px'} borderRadius={'15px'} name='tipodoc' onChange={formik.handleChange} value={formik.values.tipodoc}   placeholder='Select option'>
-                    <option value='CC'>CC</option>
-                    <option value='TI'>TI</option>
-                    <option value='PP'>PP</option>
-                  </Select>
-                <FormErrorMessage>{formik.errors.tipodoc}</FormErrorMessage>
-            </FormControl>
-            <FormControl width={'80%'} isInvalid={formik.errors.email}>
-                <FormLabel>Email</FormLabel>
-                <Input width={'80%'} border={'1px'} borderRadius={'15px'} type='text' name='email' onChange={formik.handleChange} value={formik.values.email} placeholder={'Email'} />
-                <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
-            </FormControl>
-            <FormControl width={'80%'} isInvalid={formik.errors.contrasenia}>
-                <FormLabel>Contraseña</FormLabel>
-                <Input width={'80%'} border={'1px'} borderRadius={'15px'} type='password' name='contrasenia' onChange={formik.handleChange} value={formik.values.contrasenia} placeholder={'Ingresa tu contraseña'} />
-                <FormErrorMessage>{formik.errors.contrasenia}</FormErrorMessage>
-            </FormControl>
-            <FormControl width={'80%'} isInvalid={formik.errors.genero}>
-                <FormLabel>Genero</FormLabel>
-                <Select border={'1px'} borderRadius={'15px'} name='genero' onChange={formik.handleChange} value={formik.values.genero} placeholder='Select option'>
-                  <option value='f' >F</option>
-                  <option value='m'>M</option>
-                  <option value='otro'>Otro</option>
-                </Select>
-                <FormErrorMessage>{formik.errors.genero}</FormErrorMessage>
-            </FormControl>
-            <DivButtons>
-                <ButtonCrearCuenta colorScheme='green' width={['100%','100%']}  type="submit">Crear Cuenta</ButtonCrearCuenta>
-            </DivButtons>
+          <FormControl width={'80%'} isInvalid={formik.errors.nombre}>
+            <FormLabel>Nombre</FormLabel>
+            <Input width={'80%'} border={'1px'} borderRadius={'15px'} type='text' name='nombre' onChange={formik.handleChange} value={formik.values.nombre} placeholder={'Ingresa tu nombre'} />
+            <FormErrorMessage>{formik.errors.nombre}</FormErrorMessage>
+          </FormControl>
+          <FormControl width={'80%'} isInvalid={formik.errors.tipodoc}>
+            <FormLabel>Tipo Documento</FormLabel>
+            <Select width={'100%'} border={'1px'} borderRadius={'15px'} name='tipodoc' onChange={formik.handleChange} value={formik.values.tipodoc} placeholder='Select option'>
+              <option value='CC'>CC</option>
+              <option value='TI'>TI</option>
+              <option value='PP'>PP</option>
+            </Select>
+            <FormErrorMessage>{formik.errors.tipodoc}</FormErrorMessage>
+          </FormControl>
+          <FormControl width={'80%'} isInvalid={formik.errors.email}>
+            <FormLabel>Email</FormLabel>
+            <Input width={'80%'} border={'1px'} borderRadius={'15px'} type='text' name='email' onChange={formik.handleChange} value={formik.values.email} placeholder={'Email'} />
+            <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
+          </FormControl>
+          <FormControl width={'80%'} isInvalid={formik.errors.contrasenia}>
+            <FormLabel>Contraseña</FormLabel>
+            <Input width={'80%'} border={'1px'} borderRadius={'15px'} type='password' name='contrasenia' onChange={formik.handleChange} value={formik.values.contrasenia} placeholder={'Ingresa tu contraseña'} />
+            <FormErrorMessage>{formik.errors.contrasenia}</FormErrorMessage>
+          </FormControl>
+          <FormControl width={'80%'} isInvalid={formik.errors.genero}>
+            <FormLabel>Genero</FormLabel>
+            <Select border={'1px'} borderRadius={'15px'} name='genero' onChange={formik.handleChange} value={formik.values.genero} placeholder='Select option'>
+              <option value='f' >F</option>
+              <option value='m'>M</option>
+              <option value='otro'>Otro</option>
+            </Select>
+            <FormErrorMessage>{formik.errors.genero}</FormErrorMessage>
+          </FormControl>
+          <DivButtons>
+            <ButtonCrearCuenta colorScheme='green' width={['100%', '100%']} type="submit">Crear Cuenta</ButtonCrearCuenta>
+          </DivButtons>
         </Form>
       </Section>
     </Body>
