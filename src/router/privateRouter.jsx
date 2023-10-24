@@ -9,6 +9,7 @@ const PrivatedRoutes = ({ redirectPath = "/home", children }) => {
 
 export default PrivatedRoutes;
 PrivatedRoutes.propTypes = {
+  isAuthenticated: PropTypes.bool,
   redirectPath: PropTypes.string,
   children: PropTypes.node,
 };

@@ -167,10 +167,6 @@ const FormLogin = () => {
       console.log(user);
       if (user) {
         Swal.fire("Excelente!", "Has iniciado sesión exitosamente!", "success");
-        localStorage.setItem(
-          "isAuthenticated",
-          JSON.stringify({ isAuthenticated: true })
-        );
         const action = {
           type: "LOGIN",
           payload: {
@@ -179,6 +175,7 @@ const FormLogin = () => {
           },
         };
         userLoggedDispatch(action);
+        localStorage.setItem("isAuthenticated", { isAuthenticated: true });
       } else {
         Swal.fire("Oops!", "Por favor verifique sus credenciales!", "error");
       }
