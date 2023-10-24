@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap");
 
-img {
+.sidebarImg {
   width: 24px;
   height: 24px;
 }
@@ -11,20 +11,20 @@ img {
   border: solid greenyellow 5px;
   width: 504px;
   text-align: left;
-  &__title{
-  font-size: 12px;
-  font-weight: bold;
-  border: solid yellow 5px;
+  &__title {
+    font-size: 12px;
+    font-weight: bold;
+    border: solid yellow 5px;
   }
   &__OptionsBar {
     display: flex;
     flex-direction: row;
-    justify-content:baseline;
+    justify-content: baseline;
     border: solid red 5px;
     align-items: left;
     width: 100%;
     margin-bottom: 20px;
-     &-items {
+    &-items {
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -42,7 +42,7 @@ img {
         font-size: 8px;
         border: solid orangered 5px;
       }
-     }
+    }
   }
 }
 /* 
@@ -95,10 +95,8 @@ h1 {
   }  
   }
    */
- 
-  
 
- /*  &__title {
+/*  &__title {
     font-size: 24px;
     font-weight: bold;
   }
@@ -117,7 +115,7 @@ h1 {
       }
     }
   }
-} *//* 
+} */ /* 
 .IconCloud {
   width: 16px;
   height: 16px;
