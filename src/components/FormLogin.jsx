@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import useForm from "../hooks/useForm";
+import { useNavigate } from "react-router-dom";
 import { AppContext } from "../App";
 import Swal from "sweetalert2";
 import { useFormik } from "formik";
@@ -149,6 +150,7 @@ const FormLogin = () => {
   const {
     userLogged: { userLoggedDispatch },
   } = useContext(AppContext);
+  const navigate = useNavigate();
   const [input, setInput] = useState("");
   const handleInputChange = (e) => setInput(e.target.value);
   const isError = input === "";
@@ -176,6 +178,7 @@ const FormLogin = () => {
         };
         userLoggedDispatch(action);
         localStorage.setItem("isAuthenticated", { isAuthenticated: true });
+        navigate("/home");
       } else {
         Swal.fire("Oops!", "Por favor verifique sus credenciales!", "error");
       }
