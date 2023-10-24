@@ -168,7 +168,7 @@ function Ticket( props) {
       <SvgTicket xmlns="http://www.w3.org/2000/svg" width="782" height="342" viewBox="0 0 782 342" fill="black">
         <path d="M-0.858398 207.26V307.177C-0.804556 326.77 15.2358 342.64 35.039 342.694H557.144C557.511 336.266 562.887 331.24 569.394 331.24C575.901 331.24 581.276 336.266 581.644 342.694H747.411C767.214 342.64 783.254 326.77 783.308 307.177V34.5256C783.249 14.9363 767.21 -0.927864 747.411 -0.98111H581.673C581.305 5.44655 575.93 10.4724 569.423 10.4724C562.916 10.4724 557.541 5.44655 557.173 -0.98111H35.039C15.2396 -0.927864 -0.799175 14.9363 -0.858398 34.5256V134.453" fill="#F8F9FA" />
         <g>
-          <image x="34" y="32" width="20" height="20" xlinkHref="./Frame.png" />
+          <image x="34" y="32" width="20" height="20" xlinkHref="https://res.cloudinary.com/dbktnqag9/image/upload/v1698124098/Sprint2React-Eflight/Container_9_v8pgos.png" />
           <TextCloudy x="60" y="47" fontSize="16" fill="black">{ props.dataTravel.map((travel)=>travel.airline)}</TextCloudy>
         </g>
 
@@ -178,7 +178,7 @@ function Ticket( props) {
         </g>
 
         <g>
-          <image x="34" y="115" width="20" height="20" xlinkHref="./iconAvion.png" />
+          <image x="34" y="115" width="20" height="20" xlinkHref="https://res.cloudinary.com/dbktnqag9/image/upload/v1697608921/Sprint2React-Eflight/avionnaranjasvg_cxynx2.svg" />
           <TextClase x="60" y="130" fontSize="16" fill="black">{props.dataTravel.map((travel)=>travel.cabin_class)}</TextClase>
         </g>
         <TextHora x="34" y="170">{dayjs(props.dataTravel.map((travel)=>travel.departure_time)).format('LT')}</TextHora>
@@ -195,7 +195,7 @@ function Ticket( props) {
           <text x="167" y="270" fontSize="16" fill="black">{props.dataTravel.map((travel)=>travel.flight_duration.hours)}h{props.dataTravel.map((travel)=>travel.flight_duration.minutes)}m</text>
         </g>
         <g>
-          <image x="410" y="42" width="16" height="16" xlinkHref="./shop.png" />
+          <image x="410" y="42" width="16" height="16" xlinkHref="https://res.cloudinary.com/dbktnqag9/image/upload/v1698123790/Sprint2React-Eflight/Vector_ii7gwl.png" />
 
           <DivPeso fill="#DDE0E5" opacity="0.7">
             <text x="436" y="55" fontSize="16" fill="black">{props.dataTravel.map((travel) => travel.weight.baggage)}</text>
@@ -210,7 +210,7 @@ function Ticket( props) {
         <svg x="569" y="0" xmlns="http://www.w3.org/2000/svg" width="213" height="342" viewBox="0 0 213 342" fill="none">
           <path d="M11.9398 342.694H177.677C197.481 342.64 213.521 326.77 213.575 307.177V34.5256C213.516 14.9363 197.477 -0.927864 177.677 -0.98111H11.9398C11.9357 5.43088 6.88444 10.7302 0.415039 11.1098V330.593C6.88821 330.973 11.9408 336.278 11.9398 342.694Z" fill="#0A7956" />
           <DivLogo>
-            <image x="44" y="24" width="35" height="35" xlinkHref="./Image 9.png" /> 
+            <image x="44" y="24" width="35" height="35" xlinkHref="https://res.cloudinary.com/dbktnqag9/image/upload/v1698123790/Sprint2React-Eflight/Image_9_kr8f8d.png" /> 
             <TextLogo x="92" y="50" fontSize="16" fill="black">E-flight</TextLogo>
           </DivLogo>
           <TextBooking x="23" y="83" fontSize="16" fill="black">Booking ID</TextBooking>
