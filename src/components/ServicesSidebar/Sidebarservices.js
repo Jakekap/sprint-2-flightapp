@@ -1,7 +1,7 @@
 import axios from "axios";
 export const getdata = async () => {
   try {
-    const { data } = await axios.get("http://localhost:3000/travels");
+    const { data } = await axios.get("https://flightapp-miniback.onrender.com/travels");
 
     return data;
   } catch (error) {
@@ -11,7 +11,7 @@ export const getdata = async () => {
 };
 export const getusers = async () => {
   try {
-    const { data } = await axios.get("http://localhost:3000/users");
+    const { data } = await axios.get("https://flightapp-miniback.onrender.com/users");
 
     return data;
   } catch (error) {
@@ -22,7 +22,7 @@ export const getusers = async () => {
 
 export const getpassagers = async () => {
   try {
-    const { data } = await axios.get("http://localhost:3000/passagers");
+    const { data } = await axios.get("https://flightapp-miniback.onrender.com/passagers");
 
     return data;
   } catch (error) {

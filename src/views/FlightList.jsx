@@ -44,7 +44,7 @@ export default function FlightList() {
   useEffect(() => {
     const fetchTravels = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/travels");
+        const response = await axios.get("https://flightapp-miniback.onrender.com/travels");
         setFlightData(response.data);
         setLoading(false);
       } catch (error) {

@@ -5,6 +5,7 @@ import DatosPurchase from "../components/DatosPurchase/DatosPurchase";
 import Eticket from "../components/Ticket/Eticket";
 import HorizontalLinearAlternativeLabelStepper from "../components/Stepper/Stepper";
 import styled from "styled-components";
+import { useParams } from 'react-router-dom'
 
 import { useContext } from "react";
 import { Context } from "../App";
@@ -21,6 +22,8 @@ const ContainerMyBooking = styled.div`
 
 const MyBooking = () => {
   const { value } = useContext(Context);
+  const { id } = useParams()
+  console.log(id)
   return (
     <>
       <Grid container>
