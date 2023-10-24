@@ -1,8 +1,44 @@
+<<<<<<< HEAD:src/sass/Prueba.scss
 <div className="container"> 
       <div className="container__cloudy">
         <img className="container__cloudy__title" src="./Container 4.png" id="img" />
         <h1 className="container__cloudy__title">Cloudy Airlines</h1>
       </div>   
+=======
+import { useState } from "react";
+import "../sass/_styleG1.scss";
+import SidebarG2 from "./SidebarG2";
+import { useEffect } from "react";
+import { getdata, getusers } from "./ServicesSidebar/Sidebarservices";
+
+const SidebarG1 = () => {
+  const [isBenefits, setIsBenefits] = useState(false);
+  const [flightData, setFlightData] = useState([]);
+  const [dataUser, setDataUser] = useState([]);
+
+  useEffect(() => {
+    getdata().then((response) => {
+      setFlightData(response);
+      console.log(response);
+    });
+  }, []);
+
+  useEffect(() => {
+    getusers().then((response) => {
+      setDataUser(response);
+    });
+  }, []);
+
+  /* const handleFlightSelect = (flight) => {
+    setSelectedFlight(flight);
+  };
+ */
+  return (
+    <div className="container">
+      {" "}
+      <img src="./Container 4.png"  />
+      <h1 className="container__title">Cloudy Airlines</h1>{" "}
+>>>>>>> 1de6828 (SideBarv3):src/components/SidebarG1.jsx
       <div className="container__OptionsBar">
         <div className="container__OptionsBar-items" onClick={() => setIsBenefits(false)}>
           <div className="container__OptionBar-items-box">
