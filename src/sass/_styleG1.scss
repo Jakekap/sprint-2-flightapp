@@ -1,17 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap');
+
+img {
+  width: 24px;
+  height: 24px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: solid greenyellow 5px;
+  width: 504px;
+  text-align: left;
+  &__title{
+  font-size: 12px;
+  font-weight: bold;
+  border: solid yellow 5px;
+  }
+  &__OptionsBar {
+    display: flex;
+    flex-direction: row;
+    justify-content:baseline;
+    border: solid red 5px;
+    align-items: left;
+    width: 100%;
+    margin-bottom: 20px;
+     &-items {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 8px;
+      border: solid blue 5px;
+      font-size: 10px;
+      display: flex;
+      height: 15px;
+      padding: 7px 16.13px;
+      align-items: center;
+
+      &-box {
+        width: 16px;
+        height: 16px;
+        font-size: 8px;
+        border: solid orangered 5px;
+      }
+     }
+  }
+}
+/* 
+
+h1 {
+  font-weight: 600;
+}
+
 .containerNavbar {
   margin-top: 60px;
   flex: 1;
   justify-content: center;
   align-items: center;
-  &__title {
-    font-size: 24px;
-    font-weight: bold;
+  width: 14240px;
+  height: 2669px;
+  background-color: rgba(254, 254, 254, 1);
+  font-family: 'Sarabun', sans-serif;
+  &__Top {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 70px;
+    
   }
   &__OptionsBar {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    position: absolute;
+    top: 10 px;
     border: 5px solid yellow;
+    font-weight: 400;
+    size: 14px;
+    line-height: 22px;
+    gap: 3px;
+    top: 35px;
+    width: 480px;
+    height: 36px;
+    left: 4px; 
+    &-items {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 8px;
+      border: solid blue 5px;
+      font-size: 10px;
+      display: flex;
+      height: 15px;
+      padding: 7px 16.13px;
+      align-items: center;   
+  }  
+  }
+   */
+ 
+  
+
+ /*  &__title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
     &-items {
       display: flex;
       flex-direction: row;
@@ -26,11 +117,15 @@
       }
     }
   }
+} *//* 
+.IconCloud {
+  width: 16px;
+  height: 16px;
 }
 
-.flightList {
-  margin-top: 20px;
+.IconsStyle {
+   width: 16px;
+   height: 16px;
 }
-.flightButton {
-  margin-bottom: 10px;
 }
+ */
