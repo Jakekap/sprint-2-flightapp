@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import dayjs from 'dayjs';
 
-const ContainerRight = () => {
+const ContainerRight = ({id}) => {
     const [myBookingTravles, setMyBookingTravles] = useState([]);
     const [myTravel, setMyTravel] = useState([]);
 
@@ -21,7 +21,7 @@ const ContainerRight = () => {
 
     //funcion que me retorma solo el viaje que estoy buscando
     const getMytravel= (listTravels)=>{
-        const myTravels= listTravels.filter((travel)=>travel.id == 1)
+        const myTravels= listTravels.filter((travel)=>travel.id == id)
         return myTravels;
     }
 

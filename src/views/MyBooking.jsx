@@ -23,7 +23,7 @@ const ContainerMyBooking = styled.div`
 const MyBooking = () => {
   const { value } = useContext(Context);
   const { id } = useParams()
-  console.log(id)
+
   return (
     <>
       <Grid container>
@@ -32,7 +32,7 @@ const MyBooking = () => {
             <ContainerMyBooking>
               <h1>My booking</h1>
               <HorizontalLinearAlternativeLabelStepper />
-              {value == 0 && <DatosPassagerDetails />}
+              {value == 0 && <DatosPassagerDetails  />}
               {value == 1 && <DatosPurchase />}
               {value == 2 && <Eticket />}
             </ContainerMyBooking>
@@ -41,7 +41,7 @@ const MyBooking = () => {
         <Grid item xs={12} sm={4} md={4} lg={4}>
           <Box>
             <ContainerMyBooking>
-              <ContainerRight />
+              <ContainerRight id={id}/>
             </ContainerMyBooking>
           </Box>
         </Grid>
