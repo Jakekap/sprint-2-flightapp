@@ -21,12 +21,6 @@
 
 .flightList {
   &-sidebarBackground {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(23, 26, 31, 0.4);
     &-sidebar {
       position: fixed;
       top: 0;
@@ -36,6 +30,15 @@
       z-index: 100;
       background-color: #fefefe;
     }
+  }
+  &-book {
+    background-color: #11d295;
+    margin: 20px;
+    border-radius: 23px;
+    padding: 10px 20px;
+    color: #fefefe;
+    font-size: 14px;
+    font-weight: 400;
   }
   &-container {
     margin-top: calc($navbar-height + 50px);

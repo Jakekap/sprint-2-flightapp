@@ -636,13 +636,27 @@
   "users": [
     {
       "id": 1,
+      "email": "traveler123@gmail.com",
       "username": "traveler123",
-      "password": "password123"
+      "password": "password123",
+      "tipodoc": "CC",
+      "genero": "M"
     },
     {
       "id": 2,
+      "email": "adventurer456@gmail.com",
       "username": "adventurer456",
-      "password": "secret789"
+      "password": "secret789",
+      "tipodoc": "CC",
+      "genero": "M"
+    },
+    {
+      "id": 3,
+      "email": "whitney@gmail.com",
+      "username": "traveler133",
+      "password": "12345",
+      "tipodoc": "CC",
+      "genero": "M"
     }
   ],
   "passagers": [

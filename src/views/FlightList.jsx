@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Filter from "../components/Filter";
+import { useNavigate } from "react-router-dom";
 import {
   InputAdornment,
   TextField,
@@ -7,6 +8,7 @@ import {
   FormControl,
   Select,
   Divider,
+  Drawer,
 } from "@mui/material";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
@@ -15,10 +17,29 @@ import FlightListItem from "../components/FlightListItem";
 import axios from "axios";
 import "../sass/_flightList.scss";
 import CalendarIcon from "../components/CalendarIcon";
+import SidebarG1 from "../components/SidebarG1";
 
 export default function FlightList() {
   const [flightData, setFlightData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [openDrawer, setOpenDrawer] = useState(false);
+  const [travelId, setTravelId] = useState(null);
+  const navigate = useNavigate();
+
+  const toggleDrawer = (open, id) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+    setTravelId(id);
+    setOpenDrawer(open);
+  };
+
+  const handleBook = () => {
+    navigate(`/mybooking/${travelId}`);
+  };
 
   useEffect(() => {
     const fetchTravels = async () => {
@@ -37,8 +58,6 @@ export default function FlightList() {
   if (loading) {
     return <p>Cargando...</p>;
   }
-
-  console.log(flightData);
   return (
     <section className="flightList-container">
       <div className="banner">
@@ -159,14 +178,8 @@ export default function FlightList() {
               return (
                 <div key={travel.id}>
                   <FlightListItem
-                    companyIcon={`/companyIcons/${travel.airline_icon}.svg`}
-                    companyName={travel.airline}
-                    price={travel.price.toString()}
-                    departureTime={travel.departure_time}
-                    arrivalTime={travel.arrival_time}
-                    weight={travel.weight.baggage}
-                    flightDuration={travel.flight_duration}
-                    layovers={travel.layovers.toString()}
+                    travelinfo={travel}
+                    handleClick={toggleDrawer(true, travel.id)}
                   />
                   <Divider light />
                 </div>
@@ -176,7 +189,12 @@ export default function FlightList() {
         </section>
       </section>
       <section className="flightList-sidebarBackground">
-        <section className="flightList-sidebarBackground-sidebar"></section>
+        <Drawer anchor="right" open={openDrawer} onClose={toggleDrawer(false)}>
+          <SidebarG1 />
+          <button onClick={() => handleBook()} className="flightList-book">
+            Book now
+          </button>
+        </Drawer>
       </section>
     </section>
   );

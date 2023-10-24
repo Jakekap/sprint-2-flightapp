@@ -64,7 +64,7 @@ function App() {
                     />
                   }
                 >
-                  <Route path="mybooking" element={<MyBooking />} />
+                  <Route path="mybooking/:id" element={<MyBooking />} />
                 </Route>
                 <Route
                   element={

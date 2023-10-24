@@ -39,11 +39,12 @@ button {
   gap: 30px;
   width: 50%;
   margin-left: $horizontal-padding;
-}
-.title {
-  margin: 0;
-  font-size: 40px;
-  font-weight: 700;
+  .title {
+    margin: 0;
+    color: #171a1f;
+    font-size: 40px;
+    font-weight: 700;
+  }
 }
 
 .map {
@@ -57,7 +58,7 @@ button {
   }
 }
 
-.container {
+.homeContainer {
   margin-top: $navbar-height;
   &-main {
     display: flex;
@@ -66,7 +67,7 @@ button {
     height: 100vh;
   }
   &-trips {
-    height: 100vh;
+    height: 100%;
     background-color: #f7f8f9;
     padding: 50px $horizontal-padding;
     &-cards {
@@ -102,13 +103,21 @@ button {
           height: $icon-size;
         }
         &-text {
+          color: #171a1f;
+          font-size: 24px;
+          font-weight: 700;
           margin: 0;
+          & span {
+            color: #0ea676;
+            font-size: 24px;
+            font-weight: 700;
+          }
         }
       }
     }
   }
   &-new {
-    height: 80vh;
+    height: 100vh;
     padding: 50px $horizontal-padding;
     display: flex;
     flex-direction: column;
@@ -276,6 +285,7 @@ button {
       color: #8f949f;
       font-size: 16px;
       font-weight: 400;
+      margin: 20px;
     }
     &-divider {
       display: flex;

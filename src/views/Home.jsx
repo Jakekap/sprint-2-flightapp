@@ -28,8 +28,8 @@ export default function Home() {
     setClick({ btn1: false, btn2: true });
   };
   return (
-    <section className="container">
-      <section className="container-main">
+    <section className="homeContainer">
+      <section className="homeContainer-main">
         <article className="searchPanel">
           <h1 className="title">Find your flight</h1>
           <div className="filters">
@@ -146,24 +146,24 @@ export default function Home() {
         </article>
         <img className="plane-img" src="/plane.svg" />
       </section>
-      <section className="container-trips">
-        <article className="container-trips-content">
-          <div className="container-trips-top">
-            <div className="container-trips-top-title">
+      <section className="homeContainer-trips">
+        <article className="homeContainer-trips-content">
+          <div className="homeContainer-trips-top">
+            <div className="homeContainer-trips-top-title">
               <img
-                className="container-trips-top-title-icon"
+                className="homeContainer-trips-top-title-icon"
                 src="/point.svg"
                 alt="point"
               />
-              <h2 className="container-trips-top-title-text">
+              <h2 className="homeContainer-trips-top-title-text">
                 Tips from <span>Houston</span>
               </h2>
             </div>
-            <button className="container-trips-top-button">
+            <button className="homeContainer-trips-top-button">
               Explore destination
             </button>
           </div>
-          <div className="container-trips-cards">
+          <div className="homeContainer-trips-cards">
             <div className="map">
               <img src="/map.jpg" className="map-img" />
             </div>
@@ -172,10 +172,10 @@ export default function Home() {
           </div>
         </article>
       </section>
-      <section className="container-new">
-        <article className="container-new-content">
-          <h2 className="container-new-title">What&apos;s new?</h2>
-          <div className="container-new-cards">
+      <section className="homeContainer-new">
+        <article className="homeContainer-new-content">
+          <h2 className="homeContainer-new-title">What&apos;s new?</h2>
+          <div className="homeContainer-new-cards">
             <NewsCard
               img="/news1.jpg"
               title="US flights delayed due to FAA system outage."
@@ -189,7 +189,9 @@ export default function Home() {
               title="Save money on your trip with 5 easy steps."
             />
           </div>
-          <button className="container-new-button">Read more articles</button>
+          <button className="homeContainer-new-button">
+            Read more articles
+          </button>
         </article>
       </section>
     </section>
