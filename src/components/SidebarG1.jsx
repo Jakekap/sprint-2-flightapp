@@ -29,31 +29,37 @@ const SidebarG1 = () => {
   return (
     <div className="container">
       {" "}
-      <img src="./Container 4.png"  />
+      <img className="sidebarImg" src="./Container 4.png" />
       <h1 className="container__title">Cloudy Airlines</h1>{" "}
       <div className="container__OptionsBar">
-        <div className="container__OptionsBar-items" onClick={() => setIsBenefits(false)}>
+        <div
+          className="container__OptionsBar-items"
+          onClick={() => setIsBenefits(false)}
+        >
           <div className="container__OptionBar-items-box">
-            <img src="./Fly.png" />
+            <img className="sidebarImg" src="./Fly.png" />
           </div>
           <p>Flight details</p>
         </div>
-        <div className="container__OptionsBar-items" onClick={() => setIsBenefits(true)}>
+        <div
+          className="container__OptionsBar-items"
+          onClick={() => setIsBenefits(true)}
+        >
           <div className="container__OptionBar-items-box">
-            <img src="./Benefit.png" />
+            <img className="sidebarImg" src="./Benefit.png" />
           </div>
           <p>Benefits</p>
         </div>
         <div></div>
         <div className="container__OptionsBar-items">
           <div className="container__OptionBar-items-box">
-            <img src="./Refund.png" />
+            <img className="sidebarImg" src="./Refund.png" />
           </div>
           <p>Refund</p>
         </div>
         <div className="container__OptionsBar-items">
           <div className="container__OptionBar-items-box">
-            <img src="./Reschedule.png" />
+            <img className="sidebarImg" src="./Reschedule.png" />
           </div>
           <p>Reschedule</p>
         </div>
@@ -86,19 +92,19 @@ const SidebarG1 = () => {
                   <p className="flightTimeText">{flight.arrival_time}</p>
                 </div>
                 <div className="flightInfo">
-                  <img src="./Billete.png" className="IconsStyle" />
+                  <img src="./Billete.png" className="IconsStyle sidebarImg" />
                   <p className="flightCodeText"> {flight.flight_code}</p>
                   <p className="flightCabinText">
                     Cabin class: {flight.cabin_class}
                   </p>
-                  <img src="./Case.png" className="IconsStyle" />
+                  <img src="./Case.png" className="IconsStyle sidebarImg" />
                   <p className="flightBaggageText">
                     Baggage: {flight.weight.baggage}
                   </p>
                   <p className="flightCBText">
                     Cabin Baggage: {flight.weight.cabin}
                   </p>
-                  <img src="./Case.png" className="IconsStyle" />
+                  <img src="./Case.png" className="IconsStyle sidebarImg" />
                   <p className="flightAirbusText">Airbus: {flight.airbus}</p>
                   <p className="flightSeatText">
                     {flight.seat_layout} Seat Layout
@@ -120,7 +126,7 @@ const SidebarG1 = () => {
               <div className="Payment">
                 <p className="Price">{flight.price}</p>
                 <p className="pax">/pax</p>
-                <img src="./Share.png" className="IconsStyle" />
+                <img src="./Share.png" className="IconsStyle sidebarImg" />
               </div>
             </div>
           ))}
