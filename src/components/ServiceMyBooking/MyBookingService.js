@@ -11,6 +11,16 @@ export const getMyBookingTravels = async() =>{
     }
 }
 
+export const getMyTravels = async() =>{
+    try {
+        const {data} = await axios.get(endPoints.travels);
+        return data;
+    } catch (error) {
+        console.log(error);
+        return null;
+    }
+}
+
 export const postMyBooking = async(dataPassager)=>{
     try {
         const {data} = await axios.post(endPoints.passagers, dataPassager);

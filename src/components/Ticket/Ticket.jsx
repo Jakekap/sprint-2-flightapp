@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import dayjs from 'dayjs';
 
 const DivFrame = styled.g`
   display: flex;
@@ -160,48 +161,48 @@ const SvgTicket = styled.svg`
   width:95%;
 `
 
-function Ticket() {
-
+function Ticket( props) {
+  
   return (
     <DivTicket>
       <SvgTicket xmlns="http://www.w3.org/2000/svg" width="782" height="342" viewBox="0 0 782 342" fill="black">
         <path d="M-0.858398 207.26V307.177C-0.804556 326.77 15.2358 342.64 35.039 342.694H557.144C557.511 336.266 562.887 331.24 569.394 331.24C575.901 331.24 581.276 336.266 581.644 342.694H747.411C767.214 342.64 783.254 326.77 783.308 307.177V34.5256C783.249 14.9363 767.21 -0.927864 747.411 -0.98111H581.673C581.305 5.44655 575.93 10.4724 569.423 10.4724C562.916 10.4724 557.541 5.44655 557.173 -0.98111H35.039C15.2396 -0.927864 -0.799175 14.9363 -0.858398 34.5256V134.453" fill="#F8F9FA" />
         <g>
           <image x="34" y="32" width="20" height="20" xlinkHref="./Frame.png" />
-          <TextCloudy x="60" y="47" fontSize="16" fill="black">Cloudy Airlines</TextCloudy>
+          <TextCloudy x="60" y="47" fontSize="16" fill="black">{ props.dataTravel.map((travel)=>travel.airline)}</TextCloudy>
         </g>
 
         <g>
           <TextPasajero x="34" y="90" fontSize="16" fill="black">Passenger:</TextPasajero>
-          <TexTNombre x="100" y="90" fontSize="16" fill="black">Anna Anderson</TexTNombre>
+          <TexTNombre x="100" y="90" fontSize="16" fill="black">{props.name} {props.surname}</TexTNombre>
         </g>
 
         <g>
           <image x="34" y="115" width="20" height="20" xlinkHref="./iconAvion.png" />
-          <TextClase x="60" y="130" fontSize="16" fill="black">Economy</TextClase>
+          <TextClase x="60" y="130" fontSize="16" fill="black">{props.dataTravel.map((travel)=>travel.cabin_class)}</TextClase>
         </g>
-        <TextHora x="34" y="170">23:15</TextHora>
-        <TextHora x="324" y="170">01:25</TextHora>
-        <TextDestino x="34" y="190" fontSize="16" fill="black">Houston (HOU)</TextDestino>
-        <TextDestino x="324" y="190" fontSize="16" fill="black">Las Vegas (LAS)</TextDestino>
-        <TextFecha x="34" y="210" fontSize="16" fill="black">9 Feb, 2023</TextFecha>
-        <TextFecha x="324" y="210" fontSize="16" fill="black">10 Feb, 2023</TextFecha>
+        <TextHora x="34" y="170">{dayjs(props.dataTravel.map((travel)=>travel.departure_time)).format('LT')}</TextHora>
+        <TextHora x="324" y="170">{dayjs(props.dataTravel.map((travel)=>travel.arrival_time)).format('LT')}</TextHora>
+        <TextDestino x="34" y="190" fontSize="16" fill="black">{props.dataTravel.map((travel)=>travel.locations.origin_city)} ({props.dataTravel.map((travel)=>travel.locations.origin_letter)}) </TextDestino>
+        <TextDestino x="324" y="190" fontSize="16" fill="black">{props.dataTravel.map((travel)=>travel.locations.destination_city)} ({props.dataTravel.map((travel)=>travel.locations.destination_letter)})</TextDestino>
+        <TextFecha x="34" y="210" fontSize="16" fill="black">{dayjs(props.dataTravel.map((travel)=>travel.flight_date)).format('D') } {dayjs(props.dataTravel.map((travel)=>travel.flight_date)).format('MMM')}, {dayjs(props.dataTravel.map((travel)=>travel.flight_date)).format('YYYY')}</TextFecha>
+        <TextFecha x="324" y="210" fontSize="16" fill="black">{dayjs(props.dataTravel.map((travel)=>travel.flight_date)).format('D') } {dayjs(props.dataTravel.map((travel)=>travel.flight_date)).format('MMM')}, {dayjs(props.dataTravel.map((travel)=>travel.flight_date)).format('YYYY')}</TextFecha>
         <TextCheckIn x="24" y="330" fontSize="16" fill="black">Check-in: 9th Feb 2023 at 21:20</TextCheckIn>
         <g>
           <svg xmlns="http://www.w3.org/2000/svg" x="75" y="240" width="223" height="2" viewBox="0 0 223 2" fill="none">
             <path d="M223 1H0" stroke="#6C6CFE" />
           </svg>
-          <text x="167" y="270" fontSize="16" fill="black">2h10m</text>
+          <text x="167" y="270" fontSize="16" fill="black">{props.dataTravel.map((travel)=>travel.flight_duration.hours)}h{props.dataTravel.map((travel)=>travel.flight_duration.minutes)}m</text>
         </g>
         <g>
           <image x="410" y="42" width="16" height="16" xlinkHref="./shop.png" />
 
           <DivPeso fill="#DDE0E5" opacity="0.7">
-            <text x="436" y="55" fontSize="16" fill="black">2x23kg</text>
+            <text x="436" y="55" fontSize="16" fill="black">{props.dataTravel.map((travel) => travel.weight.baggage)}</text>
           </DivPeso>
 
           <DivPeso  fill="#DDE0E5" opacity="0.7">
-            <text x="495" y="55" fill="black">1x7kg</text>
+            <text x="495" y="55" fill="black">{props.dataTravel.map((travel) => travel.weight.cabin)}</text>
           </DivPeso>
         </g>
         <TextTime x="350" y="330" fontSize="16" fill="black">*All time displayed are local</TextTime>
@@ -213,9 +214,9 @@ function Ticket() {
             <TextLogo x="92" y="50" fontSize="16" fill="black">E-flight</TextLogo>
           </DivLogo>
           <TextBooking x="23" y="83" fontSize="16" fill="black">Booking ID</TextBooking>
-          <TextId x="23" y="110" fontSize="16" fill="black">65980165 </TextId>
+          <TextId x="23" y="110" fontSize="16" fill="black">{props.dataTravel.map((travel) => travel.airbus)} </TextId>
           <TextArline x="23" y="160" fontSize="16" fill="black">Airline Booking Code</TextArline>
-          <TextCode x="23" y="187" fontSize="16" fill="black">CA-6018</TextCode>
+          <TextCode x="23" y="187" fontSize="16" fill="black">{props.dataTravel.map((travel) => travel.flight_code)}</TextCode>
         </svg>
       </SvgTicket>
     </DivTicket>

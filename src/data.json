@@ -376,7 +376,6 @@
       "airbus": "A320",
       "airline": "Delta Air Lines",
       "airline_icon": "altitude",
-
       "weight": {
         "baggage": "24 kg",
         "cabin": "10 kg"
@@ -451,7 +450,6 @@
       "airbus": "A350",
       "airline": "Air France",
       "airline_icon": "flyScape",
-
       "weight": {
         "baggage": "27 kg",
         "cabin": "12 kg"
@@ -526,7 +524,6 @@
       "airbus": "A350",
       "airline": "Singapore Airlines",
       "airline_icon": "altitude",
-
       "weight": {
         "baggage": "29 kg",
         "cabin": "13 kg"

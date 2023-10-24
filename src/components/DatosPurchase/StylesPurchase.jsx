@@ -7,7 +7,7 @@ export const StyledForm = styled(Form)`
     padding: 5% 8%;
 `;
 export const DivTargets =styled.div`
-    /*background-color: ${props => props.isVisa  ? '#11D295' : 'white'};*/
+    
     display: flex;
     width:47%;
     height:4rem;

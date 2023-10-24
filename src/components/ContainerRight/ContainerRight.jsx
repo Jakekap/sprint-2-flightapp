@@ -13,10 +13,9 @@ const ContainerRight = () => {
     useEffect(()=>{
         getMyBookingTravels().then((response)=>{
             setMyBookingTravles(response);
-            console.log('DB',response);
             const getTravel= getMytravel(response);
             setMyTravel(getTravel);
-            
+            localStorage.setItem('myTravels',JSON.stringify(getTravel));
         })
     },[]);
 
@@ -36,7 +35,7 @@ const ContainerRight = () => {
         const totalPassagers = (numAdultos +numChilds + numInfans)* pricePassaers;
         return totalPassagers;
     }
-  
+    
   return (
     <Principal>
         <Div>
@@ -70,7 +69,7 @@ const ContainerRight = () => {
         <Div>
             <TitlePrice>
                 <ImgDetails src='https://res.cloudinary.com/dbktnqag9/image/upload/v1697607271/Sprint2React-Eflight/avion_vwti8f.svg' alt='imgavion'/>
-                <Title> {myTravel.map((travel)=>travel.locations.origin_airport)}  - {myTravel.map((travel)=>travel.locations.destination_airport)}</Title>
+                <Title> {myTravel.map((travel)=>travel.locations.origin_city)}  - {myTravel.map((travel)=>travel.locations.destination_city)}</Title>
             </TitlePrice>
             <Details>
                 <DivDetails>

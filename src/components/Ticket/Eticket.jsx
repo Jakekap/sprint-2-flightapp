@@ -1,10 +1,11 @@
-import React from 'react'
+import React  from 'react'
 import Ticket from './Ticket'
 import styled from 'styled-components'
-import { useEffect } from 'react'
-import { postMyBooking } from '../ServiceMyBooking/MyBookingService'
-import { useState } from 'react'
-
+import { useState, useEffect} from 'react'
+import Swal from 'sweetalert2';
+import { postMyBooking } from '../ServiceMyBooking/MyBookingService';
+import Home from "../../views/Home";
+import { useNavigate } from 'react-router-dom';
 
 const DivContainer = styled.div`
 
@@ -83,19 +84,24 @@ const BottomBooking = styled.button`
 
 const Eticket = () => {
     const [datos, setDatos] = useState({});
-
+    const history = useNavigate();
     useEffect(()=>{
         const datosPasajeros = JSON.parse(localStorage.getItem('passager'));
         setDatos(datosPasajeros);
-        
+
     },[]);
 
+    
     const envioData = async ()=> {
         const postData = await postMyBooking(datos);
-        console.log('respuesta', postData);
-        localStorage.clear();
-        
+        Swal.fire('¡Compra de ticketes exitosa!', 'Disfruta tu viaje', 'success');
+        localStorage.removeItem("passager");
+        localStorage.removeItem("myTravels");
+        history('/home');
     }
+    const {name, surname} = JSON.parse(localStorage.getItem('passager'));
+    const dataTravel = JSON.parse(localStorage.getItem('myTravels'));
+   
 
     return (
         <DivContainer>
@@ -112,8 +118,8 @@ const Eticket = () => {
                 </DivSubTitle>
             </div>
             <DivTicket>
-                <Ticket />
-                <Ticket />
+                <Ticket name={name} surname={surname} dataTravel={dataTravel}/>
+                <Ticket name={name} surname={surname} dataTravel={dataTravel}/>
             </DivTicket>
             <div>
                 <BottomBooking onClick={()=>envioData()}><p>Send to my e-mail</p></BottomBooking>

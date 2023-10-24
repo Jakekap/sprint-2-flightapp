@@ -94,7 +94,7 @@ const DatosPurchase = () => {
                   </TitlePayment>
 
                   <TitlePayment>
-                    {/*isVisa={values.visaMasterAmex ? true : false}*/}
+                    
                     <DivTargets >
                       <Labels > <StyledField type="radio" name='visaMasterAmex' value='visaMasterAmex' />  </Labels>
                       <ImgTargeta src='https://res.cloudinary.com/dbktnqag9/image/upload/v1697678032/Sprint2React-Eflight/visa_iflfdo.svg' alt='Imgvisa'/>
