@@ -8,13 +8,15 @@ import "./sass/global.scss";
 import { ThemeProvider, createTheme } from "@mui/material";
 import MyBooking from "./views/MyBooking";
 import Login from "./views/Login";
-import SidebarG1 from "./components/SidebarG1";
 import Register from "./views/Register";
 import userLoggedReducer, {
   userLoggedInitial,
 } from "./reducer/userLoggedReducer";
 import PrivatedRoutes from "./router/privateRouter";
 import PublicRoutes from "./router/publicRouter";
+import SidebarG2 from "./components/SidebarG2/SidebarG2";
+import SidebarG1 from "./components/SidebarG1/SidebarG1";
+import SideBar from "./components/SideBar/SideBar";
 
 export const AppContext = createContext();
 const theme = createTheme({
@@ -72,7 +74,7 @@ function App() {
                   }
                 >
                   <Route path="flight-list" element={<FlightList />} />
-                  <Route path="sidebar" element={<SidebarG1 />} />
+                  <Route path="sidebar" element={<SideBar/>} />
                   <Route index element={<Home />} />
                   <Route path="home" element={<Home />} />
                   <Route path="login" element={<Login />} />

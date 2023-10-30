@@ -1,3 +1,4 @@
+<<<<<<< HEAD:src/components/SidebarG1.jsx
 import { useState } from "react";
 import "../sass/_styleG1.scss";
 import SidebarG2 from "./SidebarG2";
@@ -31,6 +32,13 @@ const SidebarG1 = () => {
       {" "}
       <img className="sidebarImg" src="./Container 4.png" />
       <h1 className="container__title">Cloudy Airlines</h1>{" "}
+=======
+<div className="container"> 
+      <div className="container__cloudy">
+        <img className="container__cloudy__title" src="./Container 4.png" id="img" />
+        <h1 className="container__cloudy__title">Cloudy Airlines</h1>
+      </div>   
+>>>>>>> 068326a (sidebarG1andG2):src/sass/Prueba.scss
       <div className="container__OptionsBar">
         <div
           className="container__OptionsBar-items"
