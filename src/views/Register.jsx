@@ -1,10 +1,7 @@
-import React from 'react'
-import FormRegister from '../components/FormRegister'
+import FormRegister from "../components/FormRegister";
 
 const Register = () => {
-  return (
-    <FormRegister/>
-  )
-}
+  return <FormRegister />;
+};
 
-export default Register
+export default Register;

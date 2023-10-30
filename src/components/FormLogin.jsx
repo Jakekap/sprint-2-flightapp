@@ -1,5 +1,4 @@
-import { useState, useContext } from "react";
-import useForm from "../hooks/useForm";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../App";
 import Swal from "sweetalert2";
@@ -11,7 +10,6 @@ import {
   FormErrorMessage,
   FormLabel,
   Input,
-  border,
 } from "@chakra-ui/react";
 import { object, string } from "yup";
 import styled from "styled-components";
@@ -146,14 +144,14 @@ const Imagen = styled.img`
 `;
 
 const FormLogin = () => {
-  const { dataForm, handleChangeInputs } = useForm();
+  //const { dataForm, handleChangeInputs } = useForm();
   const {
     userLogged: { userLoggedDispatch },
   } = useContext(AppContext);
   const navigate = useNavigate();
-  const [input, setInput] = useState("");
-  const handleInputChange = (e) => setInput(e.target.value);
-  const isError = input === "";
+  //const [input, setInput] = useState("");
+  //const handleInputChange = (e) => setInput(e.target.value);
+  //const isError = input === "";
 
   const formik = useFormik({
     initialValues: {
@@ -161,7 +159,7 @@ const FormLogin = () => {
       contrasenia: "",
     },
     validationSchema: schema,
-    onSubmit: async (values) => {
+    onSubmit: async () => {
       const user = await getUserByEmailAndPassword(
         formik.values.email,
         formik.values.contrasenia
@@ -177,7 +175,10 @@ const FormLogin = () => {
           },
         };
         userLoggedDispatch(action);
-        localStorage.setItem("isAuthenticated", { isAuthenticated: true });
+        localStorage.setItem(
+          "isAuthenticated",
+          JSON.stringify({ isAuthenticated: true })
+        );
         navigate("/home");
       } else {
         Swal.fire("Oops!", "Por favor verifique sus credenciales!", "error");

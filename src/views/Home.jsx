@@ -1,7 +1,7 @@
 import "../sass/_home.scss";
 import { TextField, MenuItem, FormControl, Select } from "@mui/material";
 import CalendarButton from "../components/CalendarButton";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import LocationCard from "../components/LocationCard";
 import NewsCard from "../components/NewsCard";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -14,6 +14,15 @@ export default function Home() {
     btn1: true,
     btn2: false,
   });
+
+  useEffect(() => {
+    if (localStorage.getItem("isAuthenticated") === null) {
+      localStorage.setItem(
+        "isAuthenticated",
+        JSON.stringify({ isAuthenticated: false })
+      );
+    }
+  }, []);
 
   const navigate = useNavigate();
 

@@ -5,7 +5,7 @@ import DatosPurchase from "../components/DatosPurchase/DatosPurchase";
 import Eticket from "../components/Ticket/Eticket";
 import HorizontalLinearAlternativeLabelStepper from "../components/Stepper/Stepper";
 import styled from "styled-components";
-import { useParams } from 'react-router-dom'
+import { useParams } from "react-router-dom";
 
 import { useContext } from "react";
 import { Context } from "../App";
@@ -22,7 +22,7 @@ const ContainerMyBooking = styled.div`
 
 const MyBooking = () => {
   const { value } = useContext(Context);
-  const { id } = useParams()
+  const { id } = useParams();
 
   return (
     <>
@@ -32,7 +32,7 @@ const MyBooking = () => {
             <ContainerMyBooking>
               <h1>My booking</h1>
               <HorizontalLinearAlternativeLabelStepper />
-              {value == 0 && <DatosPassagerDetails  />}
+              {value == 0 && <DatosPassagerDetails />}
               {value == 1 && <DatosPurchase />}
               {value == 2 && <Eticket />}
             </ContainerMyBooking>
@@ -41,7 +41,7 @@ const MyBooking = () => {
         <Grid item xs={12} sm={4} md={4} lg={4}>
           <Box>
             <ContainerMyBooking>
-              <ContainerRight id={id}/>
+              <ContainerRight id={id} />
             </ContainerMyBooking>
           </Box>
         </Grid>

@@ -6,6 +6,13 @@ export default function Navbar() {
   const handleLogin = () => {
     navigate("/login");
   };
+  const handleLogout = () => {
+    navigate("/home");
+    localStorage.setItem(
+      "isAuthenticated",
+      JSON.stringify({ isAuthenticated: false })
+    );
+  };
   return (
     <section className="main-container">
       <div className="logo">
@@ -22,7 +29,7 @@ export default function Navbar() {
         <figure className="profile-bell_icon">
           <img src="/bell.svg" alt="Bell" />
         </figure>
-        <button className="profile-user_icon">
+        <button onClick={handleLogout} className="profile-user_icon">
           <img className="profile-user_icon_img" src="/user.png" alt="User" />
         </button>
       </div>
