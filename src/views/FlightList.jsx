@@ -17,7 +17,7 @@ import FlightListItem from "../components/FlightListItem";
 import axios from "axios";
 import "../sass/_flightList.scss";
 import CalendarIcon from "../components/CalendarIcon";
-import SidebarG1 from "../components/SidebarG1";
+import SidebarG1 from "../components/SidebarG1/SidebarG1";
 
 export default function FlightList() {
   const [flightData, setFlightData] = useState([]);
