@@ -9,6 +9,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media (max-width: 391px) {
+      flex-direction: column;
+    }
     & .companyIcon {
       margin-right: 20px;
       width: calc($icon-size * 1.7);
@@ -102,6 +105,9 @@
   }
   &-bottom {
     align-self: flex-end;
+    @media (max-width: 391px) {
+      align-self: center;
+    }
     & button {
       border-radius: 4px;
       border: 1px solid #323842;

@@ -43,6 +43,9 @@ export const MiniNavbar = styled.div`
   @media (max-width: 844px) {
     gap: 70px;
   }
+  @media (max-width: 391px) {
+    gap: 5px;
+  }
 `;
 
 export const ImageContainer = styled.div`

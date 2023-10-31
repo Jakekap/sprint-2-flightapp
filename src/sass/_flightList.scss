@@ -12,6 +12,9 @@
 .drawer {
   & .MuiPaper-root {
     width: 650px;
+    @media (max-width: 391px) {
+      width: 100%;
+    }
   }
 }
 .custom-datepicker {
@@ -53,6 +56,9 @@
     display: flex;
     gap: 30px;
     margin-top: 30px;
+    @media (max-width: 391px) {
+      flex-direction: column;
+    }
     &-list {
       display: flex;
       flex-direction: column;
@@ -133,6 +139,9 @@
           display: flex;
           justify-content: space-between;
           margin: 0 40px;
+          @media (max-width: 391px) {
+            flex-direction: column;
+          }
         }
         &-date {
           cursor: pointer;

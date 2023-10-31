@@ -266,4 +266,3 @@ export const ButtonFooter = styled.button`
   width: 115px;
   height: 50px;
 `;
-
