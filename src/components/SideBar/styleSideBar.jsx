@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const StyledMain = styled.main`
   width: 100%;
   padding: 70px 10px 0 10px;
+  @media (max-width: 391px) {
+    width: 100%;
+  }
 `;
 export const Header = styled.section`
   width: 100%;
@@ -47,6 +50,14 @@ export const ImageContainer = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  padding: 10px;
+  @media (max-width: 768px) {
+    gap: 70px;
+  }
+  @media (max-width: 391px) {
+    padding: 5px;
+    display: inline;
+  }
 `;
 export const DivImage = styled.img`
   width: 16px;
