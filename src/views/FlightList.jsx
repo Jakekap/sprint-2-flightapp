@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Filter from "../components/Filter";
-import { useNavigate } from "react-router-dom";
 import {
   InputAdornment,
   TextField,
@@ -17,14 +16,13 @@ import FlightListItem from "../components/FlightListItem";
 import axios from "axios";
 import "../sass/_flightList.scss";
 import CalendarIcon from "../components/CalendarIcon";
-import SidebarG1 from "../components/SidebarG1/SidebarG1";
+import SideBar from "../components/SideBar/SideBar";
 
 export default function FlightList() {
   const [flightData, setFlightData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [openDrawer, setOpenDrawer] = useState(false);
   const [travelId, setTravelId] = useState(null);
-  const navigate = useNavigate();
 
   const toggleDrawer = (open, id) => (event) => {
     if (
@@ -35,10 +33,6 @@ export default function FlightList() {
     }
     setTravelId(id);
     setOpenDrawer(open);
-  };
-
-  const handleBook = () => {
-    navigate(`/mybooking/${travelId}`);
   };
 
   useEffect(() => {
@@ -191,11 +185,13 @@ export default function FlightList() {
         </section>
       </section>
       <section className="flightList-sidebarBackground">
-        <Drawer anchor="right" open={openDrawer} onClose={toggleDrawer(false)}>
-          <SidebarG1 />
-          <button onClick={() => handleBook()} className="flightList-book">
-            Book now
-          </button>
+        <Drawer
+          className="drawer"
+          anchor="right"
+          open={openDrawer}
+          onClose={toggleDrawer(false)}
+        >
+          <SideBar closeSidebar={setOpenDrawer} flightId={travelId} />
         </Drawer>
       </section>
     </section>

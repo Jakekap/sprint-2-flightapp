@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+import { useEffect, useState } from "react";
 import {
   DivAdult,
   DivBaggage,
@@ -28,59 +27,55 @@ import {
   PTravel,
   SectionG2,
   Span,
-
 } from "./styleSidebarG2";
 import { getdata } from "../ServicesSidebar/Sidebarservices";
+import PropTypes from "prop-types";
 
-const SidebarG2 = () => {
-
-  const [flightData, setFlightData] = useState([]);
+const SidebarG2 = ({ flightId }) => {
   const [travel, setTravel] = useState([]);
 
   useEffect(() => {
     getdata().then((response) => {
-      setFlightData(response);
       const getTravel = getMyTravel(response);
-      setTravel (getTravel);
+      setTravel(getTravel);
     });
   }, []);
 
-  const getMyTravel = (listTravels) =>{
-    const myTravel = listTravels.filter((travel)=>travel.id==1);
+  const getMyTravel = (listTravels) => {
+    const myTravel = listTravels.filter((travel) => travel.id == flightId);
     return myTravel;
-  }   
+  };
 
-  const totalDescuento = ()=>{
-    const numAdultos = travel.map((travel)=>travel.passenger_count.adults);
-    const numChilds = travel.map((travel)=>travel.passenger_count.children);
-    const numInfans = travel.map((travel)=>travel.passenger_count.infants);
-    const pricePassaers = travel.map((travel)=>travel.price);
-    const valorPaajero = (numAdultos +numChilds + numInfans)* pricePassaers;   
-    const descuento = (valorPaajero *15)/100;
+  const totalDescuento = () => {
+    const numAdultos = travel.map((travel) => travel.passenger_count.adults);
+    const numChilds = travel.map((travel) => travel.passenger_count.children);
+    const numInfans = travel.map((travel) => travel.passenger_count.infants);
+    const pricePassaers = travel.map((travel) => travel.price);
+    const valorPaajero = (numAdultos + numChilds + numInfans) * pricePassaers;
+    const descuento = (valorPaajero * 15) / 100;
     return descuento;
-}
+  };
 
-  const totalPrice = ()=>{
-    const numAdultos = travel.map((travel)=>travel.passenger_count.adults);
-    const numChilds = travel.map((travel)=>travel.passenger_count.children);
-    const numInfans = travel.map((travel)=>travel.passenger_count.infants);
-    const pricePassaers = travel.map((travel)=>travel.price);
-    const valorPaajero = (numAdultos +numChilds + numInfans)* pricePassaers;
-    const totalPassagers = valorPaajero - ((valorPaajero*15)/100);
-        
+  const totalPrice = () => {
+    const numAdultos = travel.map((travel) => travel.passenger_count.adults);
+    const numChilds = travel.map((travel) => travel.passenger_count.children);
+    const numInfans = travel.map((travel) => travel.passenger_count.infants);
+    const pricePassaers = travel.map((travel) => travel.price);
+    const valorPaajero = (numAdultos + numChilds + numInfans) * pricePassaers;
+    const totalPassagers = valorPaajero - (valorPaajero * 15) / 100;
+
     return totalPassagers;
-}
+  };
 
-const totalSinDescuento = ()=>{
-  const numAdultos = travel.map((travel)=>travel.passenger_count.adults);
-  const numChilds = travel.map((travel)=>travel.passenger_count.children);
-  const numInfans = travel.map((travel)=>travel.passenger_count.infants);
-  const pricePassaers = travel.map((travel)=>travel.price);
-  const valorPaajero = (numAdultos +numChilds + numInfans)* pricePassaers;
+  const totalSinDescuento = () => {
+    const numAdultos = travel.map((travel) => travel.passenger_count.adults);
+    const numChilds = travel.map((travel) => travel.passenger_count.children);
+    const numInfans = travel.map((travel) => travel.passenger_count.infants);
+    const pricePassaers = travel.map((travel) => travel.price);
+    const valorPaajero = (numAdultos + numChilds + numInfans) * pricePassaers;
 
-      
-  return valorPaajero;
-}
+    return valorPaajero;
+  };
   return (
     <>
       <SectionG2>
@@ -89,13 +84,22 @@ const totalSinDescuento = ()=>{
           <DivBoxCont>
             <DivCloud1>
               <DivTitle>
-                <ImgCloudy src="https://res.cloudinary.com/dhhyc88td/image/upload/v1698181855/Sprint%203/Container_4_xutkeq.png" alt="Img-cloud"/>
-                <H1Aerolinea>{travel.map((trip) =>trip.airline)}</H1Aerolinea>
+                <ImgCloudy
+                  src="https://res.cloudinary.com/dhhyc88td/image/upload/v1698181855/Sprint%203/Container_4_xutkeq.png"
+                  alt="Img-cloud"
+                />
+                <H1Aerolinea>{travel.map((trip) => trip.airline)}</H1Aerolinea>
               </DivTitle>
-              <PTravel>{travel.map((trip) =>trip.locations.origin_city)}, {travel.map((trip) =>trip.locations.destination_city)}</PTravel>
+              <PTravel>
+                {travel.map((trip) => trip.locations.origin_city)},{" "}
+                {travel.map((trip) => trip.locations.destination_city)}
+              </PTravel>
               <DivInfo>
-                <ImgAvion src="https://res.cloudinary.com/dhhyc88td/image/upload/v1698181849/Sprint%203/Clase_pmc1ua.png" alt="img-avión"/>
-                <POrange>{travel.map((trip) =>trip.cabin_class)}</POrange>
+                <ImgAvion
+                  src="https://res.cloudinary.com/dhhyc88td/image/upload/v1698181849/Sprint%203/Clase_pmc1ua.png"
+                  alt="img-avión"
+                />
+                <POrange>{travel.map((trip) => trip.cabin_class)}</POrange>
               </DivInfo>
               <DivInfo>
                 <ImgAvion
@@ -118,18 +122,24 @@ const totalSinDescuento = ()=>{
                   src="https://res.cloudinary.com/dhhyc88td/image/upload/v1698378502/Sprint%203/Container_4_1_e8d6xl.png"
                   alt="Img-cloud"
                 />
-                <H1Aerolinea>{travel.map((trip) =>trip.airline)}</H1Aerolinea>
+                <H1Aerolinea>{travel.map((trip) => trip.airline)}</H1Aerolinea>
               </DivTitle>
-              <PTravel>{travel.map((trip) =>trip.locations.destination_city)} , {travel.map((trip) =>trip.locations.origin_city)}</PTravel>
+              <PTravel>
+                {travel.map((trip) => trip.locations.destination_city)} ,{" "}
+                {travel.map((trip) => trip.locations.origin_city)}
+              </PTravel>
               <DivInfo>
                 <ImgAvion
                   src="https://res.cloudinary.com/dhhyc88td/image/upload/v1698181849/Sprint%203/Clase_pmc1ua.png"
                   alt="img-avión"
                 />
-                <POrange>{travel.map((trip) =>trip.cabin_class)}</POrange>
+                <POrange>{travel.map((trip) => trip.cabin_class)}</POrange>
               </DivInfo>
               <DivInfo>
-                <ImgAvion src="https://res.cloudinary.com/dhhyc88td/image/upload/v1698181847/Sprint%203/Refundable_ecqgjf.png" alt="Img-money" />
+                <ImgAvion
+                  src="https://res.cloudinary.com/dhhyc88td/image/upload/v1698181847/Sprint%203/Refundable_ecqgjf.png"
+                  alt="Img-money"
+                />
                 <PGreen>Refundable</PGreen>
               </DivInfo>
               <DivInfo>
@@ -148,7 +158,7 @@ const totalSinDescuento = ()=>{
             <div>
               <DivAdult>
                 <PAdult>Adult basic fee</PAdult>
-                <PPriceA>${travel.map((trip) =>trip.price)}</PPriceA>
+                <PPriceA>${travel.map((trip) => trip.price)}</PPriceA>
               </DivAdult>
               <DivAdult>
                 <PAdult>Tax</PAdult>
@@ -160,43 +170,63 @@ const totalSinDescuento = ()=>{
               </DivAdult>
               <DivAdult>
                 <PAdultOrange>Save</PAdultOrange>
-                <PAdultBoldOrange>-${(totalDescuento())}</PAdultBoldOrange>
+                <PAdultBoldOrange>-${totalDescuento()}</PAdultBoldOrange>
               </DivAdult>
             </div>
-                <Span></Span>
-                <DivTotalP>
-                    <PTotalP>Total</PTotalP>
-                    <PPriceP>${totalPrice()}</PPriceP>
-              </DivTotalP>
+            <Span></Span>
+            <DivTotalP>
+              <PTotalP>Total</PTotalP>
+              <PPriceP>${totalPrice()}</PPriceP>
+            </DivTotalP>
           </DivBoxP>
         </DivPrice>
         <H1Price>Baggage Price</H1Price>
         <DivBoxCont>
           <DivCloud1>
-                <DivTitle>
-                    <DivBaggage>
-                      <ImgCloudy src="https://res.cloudinary.com/dhhyc88td/image/upload/v1698181855/Sprint%203/Container_4_xutkeq.png" alt="Img-cloud"/>
-                      <H1Aerolinea>{travel.map((trip) =>trip.airline)}</H1Aerolinea>
-                    </DivBaggage>
-                    <ImgFlecha src="https://res.cloudinary.com/dhhyc88td/image/upload/v1698522964/Sprint%203/Frame_8_tbktvb.png" alt="ImgIconoflecha" />
-                </DivTitle>
-                <PTravel>{travel.map((trip) =>trip.locations.origin_city)}, {travel.map((trip) =>trip.locations.destination_city)}</PTravel>
+            <DivTitle>
+              <DivBaggage>
+                <ImgCloudy
+                  src="https://res.cloudinary.com/dhhyc88td/image/upload/v1698181855/Sprint%203/Container_4_xutkeq.png"
+                  alt="Img-cloud"
+                />
+                <H1Aerolinea>{travel.map((trip) => trip.airline)}</H1Aerolinea>
+              </DivBaggage>
+              <ImgFlecha
+                src="https://res.cloudinary.com/dhhyc88td/image/upload/v1698522964/Sprint%203/Frame_8_tbktvb.png"
+                alt="ImgIconoflecha"
+              />
+            </DivTitle>
+            <PTravel>
+              {travel.map((trip) => trip.locations.origin_city)},{" "}
+              {travel.map((trip) => trip.locations.destination_city)}
+            </PTravel>
           </DivCloud1>
           <DivCloud1>
-                <DivTitle>
-                  <DivBaggage>
-                    <ImgCloudy src="https://res.cloudinary.com/dhhyc88td/image/upload/v1698181855/Sprint%203/Container_4_xutkeq.png" alt="Img-cloud"/>
-                    <H1Aerolinea>{travel.map((trip) =>trip.airline)}</H1Aerolinea>
-                  </DivBaggage>
-                  <ImgFlecha src="https://res.cloudinary.com/dhhyc88td/image/upload/v1698522964/Sprint%203/Frame_8_tbktvb.png" alt="ImgIconoflecha" />
-                </DivTitle>
-                <PTravel>{travel.map((trip) =>trip.locations.destination_city)} , {travel.map((trip) =>trip.locations.origin_city)}</PTravel>
+            <DivTitle>
+              <DivBaggage>
+                <ImgCloudy
+                  src="https://res.cloudinary.com/dhhyc88td/image/upload/v1698181855/Sprint%203/Container_4_xutkeq.png"
+                  alt="Img-cloud"
+                />
+                <H1Aerolinea>{travel.map((trip) => trip.airline)}</H1Aerolinea>
+              </DivBaggage>
+              <ImgFlecha
+                src="https://res.cloudinary.com/dhhyc88td/image/upload/v1698522964/Sprint%203/Frame_8_tbktvb.png"
+                alt="ImgIconoflecha"
+              />
+            </DivTitle>
+            <PTravel>
+              {travel.map((trip) => trip.locations.destination_city)} ,{" "}
+              {travel.map((trip) => trip.locations.origin_city)}
+            </PTravel>
           </DivCloud1>
         </DivBoxCont>
-        
       </SectionG2>
     </>
   );
 };
 
 export default SidebarG2;
+SidebarG2.propTypes = {
+  flightId: PropTypes.number,
+};

@@ -9,6 +9,11 @@
     padding-left: 0;
   }
 }
+.drawer {
+  & .MuiPaper-root {
+    width: 650px;
+  }
+}
 .custom-datepicker {
   & .MuiInputBase-root {
     border-radius: 50px;

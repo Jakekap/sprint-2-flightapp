@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledMain = styled.main`
-  width: 50%;
+  width: 100%;
   padding: 70px 10px 0 10px;
 `;
 export const Header = styled.section`
@@ -34,9 +34,9 @@ export const Closed = styled.img`
 
 export const MiniNavbar = styled.div`
   display: flex;
+  justify-content: space-around;
   width: 100%;
   margin: 10px 0;
-  border: 2px solid red;
   @media (max-width: 844px) {
     gap: 70px;
   }
@@ -46,7 +46,7 @@ export const ImageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 18%;
+  cursor: pointer;
 `;
 export const DivImage = styled.img`
   width: 16px;
