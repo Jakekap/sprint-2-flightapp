@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const StyledMain = styled.main`
   width: 50%;
   padding: 70px 10px 0 10px;
+  @media (max-width: 391px) {
+    width: 100%;
+  }
 `;
 export const Header = styled.section`
   width: 100%;
@@ -37,16 +40,22 @@ export const MiniNavbar = styled.div`
   width: 100%;
   margin: 10px 0;
   border: 2px solid red;
-  @media (max-width: 844px) {
-    gap: 70px;
-  }
+  justify-content: space-between;
+  
 `;
 
 export const ImageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 18%;
+  padding: 10px;
+  @media (max-width: 768px) {
+    gap: 70px;
+  }
+  @media (max-width: 391px) {
+    padding: 5px;
+    display: inline;
+  }
 `;
 export const DivImage = styled.img`
   width: 16px;
